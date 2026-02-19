@@ -1,0 +1,23 @@
+.footer-main {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.9);
+    margin-top: 8rem;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 1em;
+}
+
+small {
+    color: #bdc3c7;
+    font-family: 'Poppins';
+}

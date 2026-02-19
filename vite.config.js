@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/css/home.css',
                 'resources/js/home.js',
                 'resources/css/layouts/navbar.css',
+                'resources/css/layouts/footer.css',
             ],
             refresh: true,
         }),
