@@ -1,3 +1,75 @@
-body{
+body {
     background-color: #101a20;
+}
+
+
+.row {
+    margin-top: 100px;
+}
+
+.profile-image {
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.50),
+        0 6px 20px 0 rgba(0, 0, 0, 0.50);
+}
+
+.title {
+    font-family: 'Poppins';
+    color: white;
+    font-size: 3.7em;
+    text-align: start;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+.subtitle{
+    font-family: 'Poppins';
+    color: #00bcd4;
+    text-align: start;
+    font-weight: bold;
+}
+
+.description{
+    font-family: 'Poppins';
+    color: white;
+    font-weight: normal;
+    text-align: start;
+    margin-top: 20px;
+    font-size: 0.3em;
+}
+
+.buttons{
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    background-color: transparent;
+    border: #00bcd4 2px solid;
+    transition: all 0.3s ease;
+}
+
+.buttons:hover{
+    background-color: #00bcd4;
+    color: white;
+    border: #00bcd4 2px solid;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.icons{
+    margin-top: 30px;
+    display: flex;
+    gap: 1em;
+}
+
+.bi{
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.bi:hover{
+    color: #00bcd4;
+    transform: scale(1.2);
+    transition: all 0.3s ease;
 }
