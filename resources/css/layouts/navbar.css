@@ -15,6 +15,11 @@
     transition: all 0.2s ease-in;
 }
 
+.active{
+    color: #3498db !important;
+    font-weight: bold;
+}
+
 .navbar-toggler:hover{
     border-color: none !important;
 }
