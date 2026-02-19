@@ -6,12 +6,11 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/css/app.css',
-                'resources/js/app.js',
                 'resources/css/home.css',
                 'resources/js/home.js',
                 'resources/css/layouts/navbar.css',
                 'resources/css/layouts/footer.css',
+                'resources/css/about.css',
             ],
             refresh: true,
         }),
