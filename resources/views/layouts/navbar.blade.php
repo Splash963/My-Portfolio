@@ -17,13 +17,13 @@
             <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="{{ route('about') }}">About Me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link {{ Request::is('services') ? 'active' : '' }}" href="#">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Projects</a>
+            <a class="nav-link {{ Request::is('projects') ? 'active' : '' }}" href="#">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="#">Contact</a>
           </li>
         </ul>
         <ul class="navbar-nav pt-3 pb-3 ms-auto" style="gap: 1em;">
