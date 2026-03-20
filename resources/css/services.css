@@ -1,0 +1,124 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #101a20;
+}
+
+.title {
+    font-weight: 700;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: #00bcd4;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.lead {
+    color: #aeb6bf;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Service Card Styles */
+.service-card {
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+    background: #1e2b34;
+    border: 1px solid rgba(0, 188, 212, 0.05) !important;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 188, 212, 0.05);
+    transition: all 0.4s ease-in-out;
+    z-index: -1;
+    border-radius: 12px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 188, 212, 0.15) !important;
+    border-color: rgba(0, 188, 212, 0.3) !important;
+}
+
+.service-card:hover::before {
+    height: 100%;
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(0, 188, 212, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .icon-wrapper {
+    background-color: #00bcd4;
+    color: #101a20;
+}
+
+.text-primary {
+    color: #00bcd4 !important;
+}
+
+.service-card:hover .icon-wrapper i {
+    color: #101a20 !important;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.card-title {
+    font-weight: 600;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.card-text {
+    color: #8c9dae !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Custom Button */
+.btn-primary {
+    background-color: #00bcd4 !important;
+    color: #101a20 !important;
+    border: 2px solid #00bcd4 !important;
+}
+
+.custom-btn {
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+.custom-btn:hover {
+    background-color: transparent !important;
+    color: #00bcd4 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 188, 212, 0.3) !important;
+}

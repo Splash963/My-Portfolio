@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     nodejs \
     npm
-    
+
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
