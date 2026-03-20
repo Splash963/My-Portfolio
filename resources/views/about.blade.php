@@ -30,11 +30,11 @@
                 </div>
                 <div class="col-lg-7">
                     <h2 class="mb-4 subtitle fw-bold text-accent">I am a passionate multi-disciplinary designer and developer.</h2>
-                    <p class="lead mb-4">Dedicated to building products that work as beautifully as they look. With a background spanning UI/UX Design, Web Design, and Mobile App Development, I bridge the gap between user needs and technical feasibility.</p>
+                    <p class="lead mb-4">Dedicated to building products that work as beautifully as they look. With a background spanning UI/UX Design, Web Design, Desktop Application Development and Mobile App Development, I bridge the gap between user needs and technical feasibility.</p>
                     <p class="lead mb-4">My journey in design and development has been driven by a desire to create meaningful and impactful digital experiences. I believe that great design is not just about aesthetics, but also about solving problems and enhancing user interactions.</p>
                     
                     <div class="row mt-4 g-4">
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             <div class="d-flex align-items-center info-box">
                                 <i class="fa-solid fa-graduation-cap text-accent fs-3 me-3"></i>
                                 <div>
@@ -51,12 +51,22 @@
                                     <p class="text-muted mb-0 small">3+ Years Working</p>
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center info-box">
+                                <i class="fa-solid fa-download text-accent fs-3 me-3"></i>
+                                <div>
+                                    <a href="#" style="text-decoration: none;">
+                                        <h5 class="text-white mb-1 fw-bold download-button">Download My Resume</h5>
+                                    </a>
+                                    <!-- <p class="text-muted mb-0 small">Click here to download my resume</p> -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Skills & Experience Section -->
             <div class="row g-5 mt-4">
                 <div class="col-lg-6">
                     <h3 class="mb-4 text-white fw-bold"><i class="fa-solid fa-code text-accent me-2"></i> Technical Skills</h3>
@@ -70,30 +80,30 @@
                         </div>
                         
                         <div class="mb-3">
-                            <div class="d-flex justify-content-between text-white mb-1"><span>Web Development (Laravel, React)</span><span>85%</span></div>
+                            <div class="d-flex justify-content-between text-white mb-1"><span>Web Development (Laravel, Bootstrap, AJAX)</span><span>70%</span></div>
                             <div class="progress" style="height: 8px; background-color: #1a2732;">
-                                <div class="progress-bar bg-accent" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-accent" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <div class="d-flex justify-content-between text-white mb-1"><span>Mobile Dev (Flutter, React Native)</span><span>80%</span></div>
+                            <div class="d-flex justify-content-between text-white mb-1"><span>Mobile Dev (Android Studio)</span><span>60%</span></div>
                             <div class="progress" style="height: 8px; background-color: #1a2732;">
-                                <div class="progress-bar bg-accent" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-accent" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <div class="d-flex justify-content-between text-white mb-1"><span>WordPress Development</span><span>95%</span></div>
+                            <div class="d-flex justify-content-between text-white mb-1"><span>WordPress Development</span><span>90%</span></div>
                             <div class="progress" style="height: 8px; background-color: #1a2732;">
-                                <div class="progress-bar bg-accent" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-accent" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         
                         <div class="mb-0">
-                            <div class="d-flex justify-content-between text-white mb-1"><span>Graphic Design</span><span>88%</span></div>
+                            <div class="d-flex justify-content-between text-white mb-1"><span>Desktop Application</span><span>80%</span></div>
                             <div class="progress" style="height: 8px; background-color: #1a2732;">
-                                <div class="progress-bar bg-accent" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar bg-accent" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
 
@@ -113,6 +123,8 @@
     <footer>
         @include('layouts.footer')
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
