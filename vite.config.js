@@ -18,6 +18,7 @@ export default defineConfig({
                 'resources/css/layouts/footer.css',
                 'resources/css/about.css',
                 'resources/css/services.css',
+                'resources/css/projects.css',
             ],
             refresh: true,
         }),
