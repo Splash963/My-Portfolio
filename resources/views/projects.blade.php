@@ -22,7 +22,7 @@
             <h1 class="text-center mb-5 title">My Work</h1>
             
             <p class="text-center lead mb-5 mx-auto" style="max-width: 800px;">
-                Here are a few design projects I've worked on recently. Want to see more? <a href="#" class="text-accent text-decoration-none border-bottom border-accent">Email me</a>.
+                Here are a few design projects I've worked on recently. Want to see more? <a href="{{ route('contact')}}" class="text-accent text-decoration-none border-bottom border-accent">Email me</a>.
             </p>
 
             <div class="row g-4">
