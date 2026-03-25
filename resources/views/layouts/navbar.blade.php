@@ -23,7 +23,7 @@
             <a class="nav-link {{ Request::is('projects') ? 'active' : '' }}" href="{{ route('projects') }}">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="#">Contact</a>
+            <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="{{ route('contact')}}">Contact</a>
           </li>
         </ul>
         <ul class="navbar-nav pt-3 pb-3 ms-auto" style="gap: 1em;">
