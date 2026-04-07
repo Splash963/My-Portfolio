@@ -19,6 +19,7 @@ export default defineConfig({
                 'resources/css/about.css',
                 'resources/css/services.css',
                 'resources/css/projects.css',
+                'resources/css/layouts/icons.css',
             ],
             refresh: true,
         }),

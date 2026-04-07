@@ -1,0 +1,67 @@
+.skill-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.skill-slider::before,
+.skill-slider::after {
+    position: absolute;
+    top: 0;
+    width: 140px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+    pointer-events: none;
+}
+
+.skill-slider::before {
+    left: 0;
+    background: linear-gradient(to right, #101a20 0%, rgba(20, 26, 32, 0) 100%);
+}
+
+.skill-slider::after {
+    right: 0;
+    background: linear-gradient(to left, #101a20 0%, rgba(20, 26, 32, 0) 100%);
+}
+
+.skill-track {
+    display: flex;
+    width: calc(120px * 44);
+    animation: scroll_left 30s linear infinite;
+    align-items: center;
+}
+
+.skill-slide {
+    width: 120px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+    filter: grayscale(100%) opacity(0.3);
+}
+
+.skill-slide:hover {
+    filter: grayscale(0%) opacity(1)
+        drop-shadow(0 0 15px rgba(0, 188, 212, 0.4));
+}
+
+@keyframes scroll_left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-120px * 11));
+    }
+}
+
+.skill-slider:hover .skill-track {
+    animation-play-state: paused;
+}

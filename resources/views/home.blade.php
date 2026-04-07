@@ -15,6 +15,7 @@
 
     <head>
         @include('layouts.navbar')
+        @include('layouts.icons')
     </head>
 
     <body>
