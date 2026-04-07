@@ -13,15 +13,15 @@
 
 <body>
 
-    <head>
+    <header>
         @include('layouts.navbar')
         @include('layouts.icons')
-    </head>
+    </header>
 
-    <body>
+    <main>
         <div class="container text-center">
             <div class="row">
-                <div class="col d-flex flex-column justify-content-center align-items-center">
+                <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center column-01">
                     <div class="title">
                         <p>Hello, I'm Theekshana Hirushan</p>
                         <h2 data-aos="fade-up" class="">
@@ -50,14 +50,14 @@
                         </a>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-lg-6 d-flex justify-content-center">
                     <div>
-                        <img src="{{ asset('profille/Profile Image.png') }}" alt="Profile Image" class="img-fluid rounded-circle profile-image" style="max-width: 400px;">
+                        <img src="{{ asset('profille/Profile Image.png') }}" alt="Profile Image" class="img-fluid rounded-circle profile-image">
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </main>
 
     <footer>
         @include('layouts.footer')

@@ -11,7 +11,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav pt-3 pb-3" style="gap: 1em;">
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}"  href="{{ route('home') }}">Home</a>
+            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="{{ route('about') }}">About Me</a>
@@ -26,7 +26,7 @@
             <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="{{ route('contact')}}">Contact</a>
           </li>
         </ul>
-        <ul class="navbar-nav pt-3 pb-3 ms-auto" style="gap: 1em;">
+        <ul class="navbar-nav pt-3 pb-3 ms-auto flex-row" style="gap: 1em;">
           <li class="nav-item">
             <a href="nav-link" href="#">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
