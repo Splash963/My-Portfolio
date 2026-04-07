@@ -6,7 +6,8 @@
 .nav-link {
     color: #ecf0f1 !important;
     transition: all 0.2s ease-in-out;
-    font-family: 'Poppins';font-size: 1em;
+    font-family: "Poppins";
+    font-size: 1em;
 }
 
 .nav-link:hover {
@@ -15,24 +16,34 @@
     transition: all 0.2s ease-in;
 }
 
-.active{
+.active {
     color: #3498db !important;
     font-weight: bold;
 }
 
-.navbar-toggler:hover{
+.navbar-toggler:hover {
     border-color: none !important;
 }
 
-.navbar-toggler:active{
+.navbar-toggler:active {
     border-color: none !important;
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
     filter: invert(100%);
 }
 
-.navbar-nav{
+.navbar-nav {
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 992px) {
+    .flex-row {
+        gap: 2em !important;
+    }
+
+    .navbar-nav {
+        gap: 1.5em !important;
+    }
 }

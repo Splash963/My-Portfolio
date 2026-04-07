@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
     server: {
         host: '0.0.0.0',
+        cors: true,
         port: 5173,
         hmr: {
             host: '172.20.10.8',
