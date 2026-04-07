@@ -20,7 +20,7 @@
     <body>
         <div class="container mt-5 mb-5 pb-5">
             <h1 class="text-center mb-5 title">About Me</h1>
-            
+
             <div class="row g-5 align-items-center mb-5">
                 <div class="col-lg-5 text-center">
                     <div class="profile-img-container position-relative d-inline-block">
@@ -32,7 +32,7 @@
                     <h2 class="mb-4 subtitle fw-bold text-accent">I am a passionate multi-disciplinary designer and developer.</h2>
                     <p class="lead mb-4">Dedicated to building products that work as beautifully as they look. With a background spanning UI/UX Design, Web Design, Desktop Application Development and Mobile App Development, I bridge the gap between user needs and technical feasibility.</p>
                     <p class="lead mb-4">My journey in design and development has been driven by a desire to create meaningful and impactful digital experiences. I believe that great design is not just about aesthetics, but also about solving problems and enhancing user interactions.</p>
-                    
+
                     <div class="row mt-4 g-4">
                         <!-- <div class="col-md-6">
                             <div class="d-flex align-items-center info-box">
@@ -71,14 +71,14 @@
                 <div class="col-lg-6">
                     <h3 class="mb-4 text-white fw-bold"><i class="fa-solid fa-code text-accent me-2"></i> Technical Skills</h3>
                     <div class="skills-card p-4 rounded bg-dark-card shadow">
-                        
+
                         <div class="mb-3">
                             <div class="d-flex justify-content-between text-white mb-1"><span>UI/UX Design</span><span>90%</span></div>
                             <div class="progress" style="height: 8px; background-color: #1a2732;">
                                 <div class="progress-bar bg-accent" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
-                        
+
                         <div class="mb-3">
                             <div class="d-flex justify-content-between text-white mb-1"><span>Web Development (Laravel, Bootstrap, AJAX)</span><span>70%</span></div>
                             <div class="progress" style="height: 8px; background-color: #1a2732;">
@@ -99,7 +99,7 @@
                                 <div class="progress-bar bg-accent" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
-                        
+
                         <div class="mb-0">
                             <div class="d-flex justify-content-between text-white mb-1"><span>Desktop Application</span><span>80%</span></div>
                             <div class="progress" style="height: 8px; background-color: #1a2732;">
@@ -109,7 +109,7 @@
 
                     </div>
                 </div>
-                
+
                 <div class="col-lg-6">
                     <h3 class="mb-4 text-white fw-bold"><i class="fa-solid fa-timeline text-accent me-2"></i> Experience</h3>
                     <div class="experience-card p-4 rounded bg-dark-card shadow">
@@ -121,6 +121,7 @@
         </div>
     </body>
     <footer>
+        @include('layouts.icons')
         @include('layouts.footer')
     </footer>
 

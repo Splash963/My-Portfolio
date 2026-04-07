@@ -4,7 +4,7 @@ services:
     build: .
     container_name: my_portfolio
     ports:
-      - "8000:80"
+      - "0.0.0.0:8000:80"
       - "5173:5173"
     volumes:
       - .:/var/www/html

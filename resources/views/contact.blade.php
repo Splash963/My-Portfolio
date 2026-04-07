@@ -20,7 +20,7 @@
     <body>
         <div class="container mt-5 mb-5 pb-5">
             <h1 class="text-center mb-5 title">Get In Touch</h1>
-            
+
             <p class="text-center lead mb-5 mx-auto" style="max-width: 800px;">
                 Have a project in mind or just want to say hi? I'd love to hear from you. Fill out the form below and I'll get back to you as soon as possible.
             </p>
@@ -75,7 +75,7 @@
                         <p class="mb-4 opacity-75">
                             Whether you're looking to build a new website, improve your UI/UX, or need an app developed, feel free to reach out. I'm currently available for freelance work.
                         </p>
-                        
+
                         <div class="d-flex align-items-center mb-4 info-item">
                             <div class="icon-box me-3">
                                 <i class="fa-solid fa-location-dot"></i>
@@ -122,7 +122,8 @@
     <footer>
         @include('layouts.footer')
     </footer>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
