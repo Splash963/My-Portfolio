@@ -9,6 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     @vite('resources/css/home.css')
     @vite('resources/js/home.js')
+    @vite('resources/css/layouts/reviews.css')
 </head>
 
 <body>
@@ -52,11 +53,14 @@
                 </div>
                 <div class="col-12 col-lg-6 d-flex justify-content-center">
                     <div>
-                        <img src="{{ asset('profille/Profile Image.png') }}" alt="Profile Image" class="img-fluid rounded-circle profile-image">
+                        <img src="{{ asset('profille/my-img.jpeg') }}" alt="Profile Image" class="img-fluid rounded-circle profile-image">
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Reviews Section -->
+        @include('layouts.reviews')
     </main>
 
     <footer>
