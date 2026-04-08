@@ -22,6 +22,7 @@ export default defineConfig({
                 'resources/css/services.css',
                 'resources/css/projects.css',
                 'resources/css/layouts/icons.css',
+                'resources/css/layouts/reviews.css',
             ],
             refresh: true,
         }),
