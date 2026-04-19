@@ -1,0 +1,177 @@
+.main {
+    width: 90%;
+    align-items: center;
+    margin: auto;
+}
+
+.quick-links {
+    display: flex;
+    gap: 2em;
+}
+
+.card {
+    width: 20rem;
+    height: 10rem;
+    flex-grow: 1;
+    border: none;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.data1,
+.data2,
+.data3,
+.data4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    background-color: #101a20;
+    color: #bfc9d1;
+    font-weight: bold;
+    border: none;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.charts {
+    display: flex;
+    gap: 2em;
+}
+
+.tables {
+    flex-grow: 1;
+}
+
+.circle-card {
+    width: 20rem;
+    height: 29.8rem;
+    border-radius: 0;
+}
+
+.table {
+    width: 100%;
+    height: 13rem;
+    border-radius: 0;
+}
+
+.item-data {
+    display: flex;
+}
+
+.content {
+    flex-shrink: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+}
+
+.button-cover {
+    display: flex;
+    gap: 1em;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    /* full width of parent */
+    max-width: 400px;
+    /* cap size for desktop */
+    margin: auto;
+    /* center it */
+}
+
+.profile-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        width: 95%;
+    }
+
+    .data1,
+    .data2,
+    .data3,
+    .data4 {
+        gap: 5px;
+    }
+
+    .quick-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 10rem;
+    }
+
+    .charts {
+        flex-wrap: wrap;
+    }
+
+    .chart-card {
+        width: 100%;
+    }
+
+    .circle {
+        width: 100%;
+        order: 1;
+    }
+
+    .circle-card {
+        width: 100%;
+    }
+
+    .tables {
+        flex-grow: 1;
+        order: 2;
+    }
+
+    .table {
+        width: 100%;
+    }
+
+    .content {
+        flex-shrink: 1;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 0.5rem;
+        padding-right: 0;
+    }
+
+    .details {
+        font-size: 10px;
+    }
+
+    .btn {
+        width: 60px;
+        font-size: 8px;
+        height: 25px;
+    }
+
+    .button-cover {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .chart-container {
+        max-width: 300px;
+    }
+}
