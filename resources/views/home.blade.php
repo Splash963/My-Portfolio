@@ -35,8 +35,8 @@
                         </p>
                     </div>
                     <div class="me-auto mt-3">
-                        <a href="" class="btn btn-secondary buttons me-2">View My Work</a>
-                        <a href="" class="btn btn-primary buttons">Contact Me</a>
+                        <a href="{{ route('projects')}}" class="btn btn-secondary buttons me-2">View My Work</a>
+                        <a href="{{ route('contact')}}" class="btn btn-primary buttons">Contact Me</a>
                     </div>
                     <div class="icons me-auto">
                         <a href="https://github.com/Splash963" target="_blank">
@@ -60,7 +60,7 @@
         </div>
 
         <!-- Reviews Section -->
-        @include('layouts.reviews')
+        
     </main>
 
     <footer>

@@ -1,0 +1,246 @@
+body {
+    background-color: #101a20;
+}
+
+.navbar-head {
+    display: flex;
+    background-color: #003049;
+}
+
+.bg-body-tertiary {
+    background-color: #101a20 !important;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0.8em;
+    padding-left: 2rem;
+}
+
+.logo-img {
+    width: 6rem;
+    border-radius: 50%;
+}
+
+.logo-text {
+    color: #bfc9d1;
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: "Poppins";
+}
+
+.profile {
+    display: flex;
+    gap: 0.8em;
+    padding: 0.5em;
+    align-items: center;
+}
+
+.profile-img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.profile-text {
+    color: black;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-family: "Poppins";
+}
+
+.offcanvas-body {
+    background-color: #213448;
+}
+
+.icon-card {
+    width: 100px;
+    height: 100px;
+    background-color: #1a3d64;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+.icon-bg {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.icon-head {
+    width: 30px;
+    height: 30px;
+    background-color: #1a3d64;
+    border-radius: 50%;
+    margin: 10px auto 0 auto;
+}
+
+.icon-body {
+    width: 45px;
+    height: 35px;
+    background-color: #1a3d64;
+    border-radius: 50% /30%;
+    margin: 5px auto 0 auto;
+}
+
+.nav-link {
+    color: white !important;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2em;
+    padding: 0.5em;
+    padding-left: 10%;
+    padding-right: 10%;
+    transition-property:
+        transform,
+        scale 0.5s ease;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logout {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.logout-link {
+    color: black;
+    font-family: Arimo, sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    color: white !important;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .nav-item:hover {
+    scale: 1.15;
+    transition-property:
+        transform,
+        scale 0.5s ease;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    cursor: pointer;
+}
+
+.navbar-nav .link.active {
+    color: #ffd41d !important;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffc50f;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffd41d !important;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-brand {
+    padding: 20px;
+    font-weight: bold;
+    font-family: "Arimo", sans-serif;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        gap: 1em;
+        padding: 0.8em;
+        padding-left: 1rem;
+    }
+
+    .logo-img {
+        width: 3rem;
+    }
+
+    .logo-text {
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .profile {
+        gap: 0.5em;
+        padding: 0.5em;
+        padding-right: 2rem;
+        justify-content: center;
+    }
+
+    .profile-img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+    }
+
+    .profile-text {
+        font-size: 0.6rem;
+        margin-top: 10px;
+    }
+
+    .offcanvas.half-screen {
+        width: 60% !important;
+    }
+
+    .icon-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .icon-bg {
+        width: 80px;
+        height: 80px;
+    }
+
+    .icon-head {
+        width: 25px;
+        height: 25px;
+    }
+
+    .icon-body {
+        width: 40px;
+        height: 35px;
+    }
+}
