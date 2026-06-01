@@ -1,5 +1,5 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #101a20;
 }
 
@@ -109,13 +109,20 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
     z-index: -1;
     transform: rotate(45deg);
 }
 
 /* Darker text on the cyan card for readability */
-.info-card h3, .info-card h5, .info-card p, .info-card i {
+.info-card h3,
+.info-card h5,
+.info-card p,
+.info-card i {
     color: #101a20 !important;
 }
 

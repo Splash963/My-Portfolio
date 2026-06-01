@@ -60,7 +60,58 @@
         </div>
 
         <!-- Reviews Section -->
-        
+        <div class="container mt-5 mb-5">
+            <h3 class="text-center text-white mb-4">What People Say</h3>
+            
+            <div class="row mb-5">
+                @forelse($comments as $comment)
+                    <div class="col-md-4 mb-3">
+                        <div class="card bg-dark text-white shadow" style="border: 1px solid #333;">
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">{{ $comment->name }}</h5>
+                                <p class="card-text">"{{ $comment->message }}"</p>
+                                <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12">
+                        <p class="text-center text-muted">No reviews yet. Be the first to leave one!</p>
+                    </div>
+                @endforelse
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card bg-dark text-white" style="border: 1px solid #333;">
+                        <div class="card-body">
+                            <h4 class="text-center mb-3">Leave a Review</h4>
+                            
+                            @if(session('success'))
+                                <div class="alert alert-success">{{ session('success') }}</div>
+                            @endif
+
+                            <form action="{{ route('comments.store') }}" method="POST">
+                                @csrf
+                                <div class="mb-3">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" name="name" class="form-control bg-secondary text-white border-0" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" name="email" class="form-control bg-secondary text-white border-0" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Message</label>
+                                    <textarea name="message" class="form-control bg-secondary text-white border-0" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>

@@ -27,28 +27,28 @@
                 <div class="card">
                     <div class="card-body data1">
                         <h5 class="card-title">Pending Bookings :</h5>
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title">0</h5>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-body data2">
                         <h5 class="card-title">Pending Reviews :</h5>
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title">{{ $pendingCommentsCount ?? 0 }}</h5>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-body data3">
-                        <h5 class="card-title">All Drivers :</h5>
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title">Total Projects :</h5>
+                        <h5 class="card-title">{{ $totalProjectsCount ?? 0 }}</h5>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-body data4">
-                        <h5 class="card-title">Total Users : </h5>
-                        <h5 class="card-title"></h5>
+                        <h5 class="card-title">Total Reviews : </h5>
+                        <h5 class="card-title">{{ $totalCommentsCount ?? 0 }}</h5>
                     </div>
                 </div>
             </div>
