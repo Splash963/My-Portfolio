@@ -23,7 +23,9 @@
             <h1 class="text-center mb-5 title">My Services</h1>
 
             <p class="text-center lead mb-5 mx-auto" style="max-width: 800px;">
-                I offer a diverse range of design and development services tailored to help your business achieve its digital goals. By blending deep technical expertise with user-centered design, I craft solutions that are both beautiful and performant.
+                I offer a diverse range of design and development services tailored to help your business achieve its
+                digital goals. By blending deep technical expertise with user-centered design, I craft solutions that
+                are both beautiful and performant.
             </p>
 
             <div class="row g-4">
@@ -35,7 +37,8 @@
                         </div>
                         <h4 class="card-title mb-3">UI/UX Design</h4>
                         <p class="card-text text-muted">
-                            Creating intuitive and engaging user experiences. I focus on human-centered design principles to build interfaces that are aesthetically pleasing and easy to navigate.
+                            Creating intuitive and engaging user experiences. I focus on human-centered design
+                            principles to build interfaces that are aesthetically pleasing and easy to navigate.
                         </p>
                     </div>
                 </div>
@@ -48,7 +51,8 @@
                         </div>
                         <h4 class="card-title mb-3">Web Development</h4>
                         <p class="card-text text-muted">
-                            Developing responsive, high-performance websites using the latest technologies including modern HTML, CSS, JavaScript, Laravel, and React.
+                            Developing responsive, high-performance websites using the latest technologies including
+                            modern HTML, CSS, JavaScript, Laravel, and React.
                         </p>
                     </div>
                 </div>
@@ -61,7 +65,8 @@
                         </div>
                         <h4 class="card-title mb-3">Mobile Apps</h4>
                         <p class="card-text text-muted">
-                            Building cross-platform mobile applications that provide native-like experiences on both iOS and Android using frameworks like Flutter and React Native.
+                            Building cross-platform mobile applications that provide native-like experiences on both iOS
+                            and Android using frameworks like Flutter and React Native.
                         </p>
                     </div>
                 </div>
@@ -74,7 +79,8 @@
                         </div>
                         <h4 class="card-title mb-3">WordPress</h4>
                         <p class="card-text text-muted">
-                            Custom WordPress theme and plugin development. Delivering scalable CMS solutions that empower you to manage your content effortlessly.
+                            Custom WordPress theme and plugin development. Delivering scalable CMS solutions that
+                            empower you to manage your content effortlessly.
                         </p>
                     </div>
                 </div>
@@ -87,7 +93,8 @@
                         </div>
                         <h4 class="card-title mb-3">Graphic Design</h4>
                         <p class="card-text text-muted">
-                            Crafting visual identities, logos, and marketing materials that resonate with your brand and effectively communicate your message to the audience.
+                            Crafting visual identities, logos, and marketing materials that resonate with your brand and
+                            effectively communicate your message to the audience.
                         </p>
                     </div>
                 </div>
@@ -100,14 +107,16 @@
                         </div>
                         <h4 class="card-title mb-3">E-Commerce</h4>
                         <p class="card-text text-muted">
-                            Setting up robust online stores designed to convert visitors into customers, integrating secure payment gateways and optimizing user journeys.
+                            Setting up robust online stores designed to convert visitors into customers, integrating
+                            secure payment gateways and optimizing user journeys.
                         </p>
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-5 pt-4">
-                <a href="#" class="btn btn-primary btn-lg custom-btn shadow">Discuss Your Project</a>
+                <a href="{{ route('contact') }}" class="btn btn-primary btn-lg custom-btn shadow">Discuss Your
+                    Project</a>
             </div>
         </div>
     </body>

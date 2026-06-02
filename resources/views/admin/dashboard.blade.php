@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('admin.layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+@section('title', 'Admin Dashboard')
 
-    <link href="images/icons/Logo.png" rel="icon">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    @vite('resources/css/admin/dashboard.css')
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-
-<body>
-    @include('admin.layouts.offcanvas')
-        <!-- Quick links -->
-        <div class="main">
+@section('content')
             <div>
                 <h1 class="text-center mt-5" style="color: #BFC9D1;">Admin Dashboard</h1>
                 <p class="text-center" style="color: #BFC9D1;">Welcome to the admin dashboard. Here you can manage the website content and settings.</p>
@@ -58,15 +43,15 @@
                 <div class="tables">
                     <div class="card mb-5 table">
                         <div class="card-body" style="background-color: #D1D3D4;">
-                            <p class="card-title mb-3 fw-semibold fs-4">Pending Appointments</p>
+                            <p class="card-title mb-3 fw-semibold fs-4" style="color: #333;">Pending Appointments</p>
                             <div class="overflow-y-scroll" style="max-height: 9rem; scrollbar-width: thin;">
 
                                 <div class="item-data" style="background-color: transparent;">
                                     <div class="picture">
-                                        <img src="images/pngtree-medical-microscope-isolated-png-image_11975870.png" class="img-fluid" alt="" style="max-height: 8.5rem;">
+                                        <img src="{{ asset('images/pngtree-medical-microscope-isolated-png-image_11975870.png') }}" class="img-fluid" alt="" style="max-height: 8.5rem;">
                                     </div>
                                     <div class="content">
-                                        <div class="details">
+                                        <div class="details" style="color: #333;">
                                             <p>Username :</p>
                                             <p>Division :</p>
                                             <p>Date :</p>
@@ -80,25 +65,6 @@
                                     </div>
                                 </div>
 
-
-                                <div class="item-data" style="background-color: transparent;">
-                                    <div class="picture">
-                                        <img src="images/pngtree-medical-microscope-isolated-png-image_11975870.png" class="img-fluid" alt="" style="max-height: 8.5rem;">
-                                    </div>
-                                    <div class="content">
-                                        <div class="details">
-                                            <p>Username :</p>
-                                            <p>Division :</p>
-                                            <p>Date :</p>
-                                        </div>
-                                        <div class="buttons">
-                                            <div class="button-cover">
-                                                <button type="button" class="btn btn-primary">View</button>
-                                                <button type="button" class="btn btn-danger">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
                         </div>
@@ -106,37 +72,15 @@
 
                     <div class="card mb-5 table">
                         <div class="card-body" style="background-color: #D1D3D4;">
-                            <p class="card-title fw-semibold fs-4">Cancelled Appointments</p>
+                            <p class="card-title fw-semibold fs-4" style="color: #333;">Cancelled Appointments</p>
                             <div class="overflow-y-scroll" style="max-height: 9rem; scrollbar-width: thin;">
 
                                 <div class="item-data" style="background-color: transparent;">
                                     <div class="picture">
-                                        <img src="images/pngtree-medical-microscope-isolated-png-image_11975870.png" class="img-fluid" alt="" style="max-height: 8.5rem;">
+                                        <img src="{{ asset('images/pngtree-medical-microscope-isolated-png-image_11975870.png') }}" class="img-fluid" alt="" style="max-height: 8.5rem;">
                                     </div>
                                     <div class="content">
-                                        <div class="details">
-                                            <p>Username :</p>
-                                            <p>Division :</p>
-                                            <p>Employee Name :</p>
-                                            <p>Reason :</p>
-                                            <p>Date :</p>
-                                        </div>
-                                        <div class="buttons">
-                                            <div class="button-cover">
-                                                <button type="button" class="btn btn-primary">View</button>
-                                                <button type="button" class="btn btn-danger">Delete</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="item-data" style="background-color: transparent;">
-                                    <div class="picture">
-                                        <img src="images/pngtree-medical-microscope-isolated-png-image_11975870.png" class="img-fluid" alt="" style="max-height: 8.5rem;">
-                                    </div>
-                                    <div class="content">
-                                        <div class="details">
+                                        <div class="details" style="color: #333;">
                                             <p>Username :</p>
                                             <p>Division :</p>
                                             <p>Employee Name :</p>
@@ -159,7 +103,7 @@
                 <div class="circle">
                     <div class="card circle-card">
                         <div class="card-body">
-                            <h5 class="card-title mb-5">Monthly Summury</h5>
+                            <h5 class="card-title mb-5">Monthly Summary</h5>
                             <div class="chart-container">
                                 <canvas id="myDonutChart"></canvas>
                             </div>
@@ -167,9 +111,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </body>
+@endsection
 
+@section('scripts')
     <script>
         const ctx = document.getElementById('myDonutChart').getContext('2d');
         const myDonutChart = new Chart(ctx, {
@@ -193,9 +137,4 @@
             }
         });
     </script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+@endsection
