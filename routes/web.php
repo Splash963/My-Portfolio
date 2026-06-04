@@ -21,4 +21,5 @@ Route::get('/admin/manage-reviews', function () {
 })->name('admin.reviews');
 
 Route::get('/admin/manage-projects', [ProjectsController::class, 'index'])->name('admin.projects');
+Route::get('/admin/manage-projects/view', [ProjectsController::class, 'view_data'])->name('projects.view');
 Route::post('/admin/manage-projects/add', [ProjectsController::class, 'store'])->name('projects.add');
