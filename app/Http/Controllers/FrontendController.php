@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function home()
+    public function index()
     {
-        $comments = \App\Models\Comment::where('is_approved', true)->latest()->take(3)->get();
-        return view('home', compact('comments'));
+        return view('home');
     }
 
     public function about()
@@ -17,19 +16,18 @@ class FrontendController extends Controller
         return view('about');
     }
 
-    public function services()
-    {
-        return view('services');
-    }
-
     public function projects()
     {
-        $projects = \App\Models\Project::latest()->get();
-        return view('projects', compact('projects'));
+        return view('projects');
     }
 
     public function contact()
     {
         return view('contact');
+    }
+
+    public function services()
+    {
+        return view('services');
     }
 }
