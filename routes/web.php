@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\Admin\ProjectsController;
 
 // Frontend Routes
 Route::get('/', [FrontendController::class, 'index'])->name('home');
@@ -15,9 +16,9 @@ Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/admin', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard');
-Route::get('/admin/manage-projects', function () {
-    return view('admin.manage-projects');
-})->name('admin.projects');
 Route::get('/admin/manage-reviews', function () {
     return view('admin.manage-reviews');
 })->name('admin.reviews');
+
+Route::get('/admin/manage-projects', [ProjectsController::class, 'index'])->name('admin.projects');
+Route::post('/admin/manage-projects/add', [ProjectsController::class, 'store'])->name('projects.add');
