@@ -53,6 +53,9 @@ function fetchProjects() {
                     </td>
                     <td>${escapeHtml(project.description)}</td>
                     <td>
+                        ${project.tools ? `<span class="badge bg-secondary">${escapeHtml(project.tools)}</span>` : 'N/A'}
+                    </td>
+                    <td>
                         ${project.project_link ? `<a href="${escapeHtml(project.project_link)}" target="_blank" class="text-info">${escapeHtml(project.project_link)}</a>` : 'N/A'}
                     </td>
                     <td>
@@ -65,6 +68,7 @@ function fetchProjects() {
                             data-id="${project.id}"
                             data-title="${escapeHtml(project.title)}"
                             data-description="${escapeHtml(project.description)}"
+                            data-tools="${escapeHtml(project.tools || '')}"
                             data-project-link="${escapeHtml(project.project_link || '')}"
                             data-github-link="${escapeHtml(project.github_link || '')}"
                             title="Update Project">
@@ -137,6 +141,7 @@ document.addEventListener('click', function (e) {
         document.getElementById('update_project_id').value = editBtn.getAttribute('data-id') || '';
         document.getElementById('update_title').value = editBtn.getAttribute('data-title') || '';
         document.getElementById('update_description').value = editBtn.getAttribute('data-description') || '';
+        document.getElementById('update_tools').value = editBtn.getAttribute('data-tools') || '';
         document.getElementById('update_project_link').value = editBtn.getAttribute('data-project-link') || '';
         document.getElementById('update_github_link').value = editBtn.getAttribute('data-github-link') || '';
 

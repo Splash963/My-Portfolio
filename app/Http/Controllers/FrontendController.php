@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Project;
 
 class FrontendController extends Controller
 {
@@ -18,7 +18,9 @@ class FrontendController extends Controller
 
     public function projects()
     {
-        return view('projects');
+        return view('projects', [
+            'projects' => Project::orderBy('created_at', 'desc')->get()
+        ]);
     }
 
     public function contact()

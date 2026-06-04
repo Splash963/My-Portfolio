@@ -16,5 +16,6 @@ class Project extends Model
         'description',
         'project_link',
         'github_link',
+        'tools',
     ];
 }

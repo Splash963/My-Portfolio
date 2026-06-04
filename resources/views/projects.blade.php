@@ -30,30 +30,54 @@
             <div class="row g-4">
                 @forelse($projects as $project)
                     <div class="col-md-6 col-lg-4">
-                        <div class="card project-card border-0 h-100 bg-dark-card shadow">
+                        <div class="card project-card border-0 h-100 bg-dark-card shadow transition-hover">
                             <div class="position-relative overflow-hidden project-img-wrapper">
-                                @if ($project->image_path)
-                                    <img src="{{ asset('storage/' . $project->image_path) }}" class="card-img-top"
+                                @if ($project->image)
+                                    <img src="{{ asset('images/projects/' . $project->image) }}" class="card-img-top"
                                         alt="{{ $project->title }}">
                                 @else
                                     <img src="{{ asset('images/project1.jpg') }}" class="card-img-top"
                                         alt="Placeholder">
                                 @endif
                                 <div class="project-overlay d-flex align-items-center justify-content-center">
-                                    @if ($project->link)
-                                        <a href="{{ $project->link }}" target="_blank"
-                                            class="btn btn-outline-accent rounded-circle icon-btn"><i
-                                                class="fa-solid fa-link"></i></a>
-                                    @endif
+                                    <a href="{{ $project->project_link ?? '#' }}"
+                                        target="{{ $project->project_link ? '_blank' : '_self' }}"
+                                        class="btn btn-outline-accent rounded-circle icon-btn"><i
+                                            class="fa-solid fa-link"></i></a>
                                 </div>
                             </div>
-                            <div class="card-body p-4">
-                                <h4 class="card-title text-white fw-bold mt-3 mb-2">{{ $project->title }}</h4>
-                                <p class="card-text text-muted mb-4">{{ $project->description }}</p>
-                                @if ($project->link)
-                                    <a href="{{ $project->link }}" target="_blank"
-                                        class="btn btn-accent px-4 py-2 rounded-bill shadow-sm w-100 fw-bold">View Case
-                                        Study</a>
+                            <div class="card-body p-4 d-flex flex-column position-relative">
+                                <a href="{{ $project->project_link ?? '#' }}"
+                                    target="{{ $project->project_link ? '_blank' : '_self' }}"
+                                    class="stretched-link"></a>
+
+                                <h4 class="card-title text-white fw-bold mt-1 mb-3">{{ $project->title }}</h4>
+                                <p class="card-text text-white mb-4 flex-grow-1"
+                                    style="font-size: 0.95rem; line-height: 1.6;">
+                                    {{ $project->description }}
+                                </p>
+
+                                @if ($project->tools)
+                                    <div class="mb-4 d-flex flex-wrap gap-2">
+                                        @foreach (explode(',', $project->tools) as $tool)
+                                            @if (trim($tool))
+                                                <span
+                                                    class="badge bg-dark border border-secondary text-light px-3 py-2 rounded-pill"
+                                                    style="font-size: 0.75rem; letter-spacing: 0.5px;">
+                                                    {{ trim($tool) }}
+                                                </span>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                @endif
+
+                                @if ($project->github_link)
+                                    <div class="mt-auto" style="position: relative; z-index: 2;">
+                                        <a href="{{ $project->github_link }}" target="_blank"
+                                            class="btn btn-outline-light px-4 py-2 rounded-pill shadow-sm w-100 fw-bold">
+                                            <i class="fa-brands fa-github me-2"></i> View in GitHub
+                                        </a>
+                                    </div>
                                 @endif
                             </div>
                         </div>
