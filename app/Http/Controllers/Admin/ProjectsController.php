@@ -13,6 +13,12 @@ class ProjectsController extends Controller
         return view('admin.manage-projects');
     }
 
+    public function view_data()
+    {
+        $projects = Project::all();
+        return response()->json($projects);
+    }
+
     public function store(Request $request)
     {
 
