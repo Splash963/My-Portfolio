@@ -92,7 +92,8 @@
                             <div class="row justify-content-center">
                                 <div class="col-11 col-md-8 text-center">
                                     <div class="review-card">
-                                        <p class="review-text fst-italic mb-4">"An absolute pleasure to work with. He delivered
+                                        <p class="review-text fst-italic mb-4">"An absolute pleasure to work with. He
+                                            delivered
                                             a flawless web application ahead of schedule. The mobile responsiveness is
                                             perfect and the code is remarkably clean."</p>
                                         <h5 class="review-author mb-1">Sarah Jenkins</h5>
@@ -106,7 +107,8 @@
                             <div class="row justify-content-center">
                                 <div class="col-11 col-md-8 text-center">
                                     <div class="review-card">
-                                        <p class="review-text fst-italic mb-4">"The expertise Theekshana brings to the table
+                                        <p class="review-text fst-italic mb-4">"The expertise Theekshana brings to the
+                                            table
                                             significantly improved our user engagement. He bridges the gap between
                                             design and functionality seamlessly."</p>
                                         <h5 class="review-author mb-1">Michael Chen</h5>

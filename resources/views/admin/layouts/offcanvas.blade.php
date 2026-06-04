@@ -32,12 +32,6 @@
                                     alt="...">
                             </button>
                             <p class="profile-text"></p>
-                            <form action="{{ route('admin.logout') }}" method="POST">
-                                @csrf
-                                <ul class="dropdown-menu">
-                                    <li><button type="submit" class="dropdown-item">Logout</button></li>
-                                </ul>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -87,7 +81,8 @@
                                         </svg>
                                     </div>
                                     <div class="nav-link">
-                                        <a class="link" href="{{ route('admin.dashboard') }}">Home</a>
+                                        <a class="link {{ Request::is('admin') ? 'active' : '' }}"
+                                            href="{{ route('admin.dashboard') }}">Home</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -99,7 +94,8 @@
                                         </svg>
                                     </div>
                                     <div class="nav-link">
-                                        <a class="link" href="{{ route('admin.projects.index') }}">Projects</a>
+                                        <a class="link {{ Request::is('projects') ? 'active' : '' }}"
+                                            href="{{ route('admin.projects') }}">Projects</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
@@ -111,7 +107,8 @@
                                         </svg>
                                     </div>
                                     <div class="nav-link">
-                                        <a class="link" href="{{ route('admin.comments.index') }}">Reviews</a>
+                                        <a class="link {{ Request::is('reviews') ? 'active' : '' }}"
+                                            href="{{ route('admin.reviews') }}">Reviews</a>
                                     </div>
                                 </li>
                             </ul>
