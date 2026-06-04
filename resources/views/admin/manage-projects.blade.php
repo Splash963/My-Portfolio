@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     @vite('resources/css/admin/manage-projects.css')
+    @vite('resources/js/admin/manage-projects.js')
 </head>
 
 <body>
@@ -33,28 +34,27 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form id="addUserForm">
+                        <form id="addProjectForm">
                             <div class="mb-3">
-                                <label for="name" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="name" name="name">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title" name="title">
                             </div>
                             <div class="mb-3">
-                                <label for="address" class="form-label">Image</label>
-                                <input type="file" class="form-control" id="address" name="address">
+                                <label for="image" class="form-label">Image</label>
+                                <input type="file" class="form-control" id="image" name="image">
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Project Description</label>
                                 <input type="text" class="form-control" id="description" name="description">
                             </div>
                             <div class="mb-3">
-                                <label for="image" class="form-label">Project Image</label>
-                                <input type="text" class="form-control" id="image" name="image">
+                                <label for="project_link" class="form-label">Project Link</label>
+                                <input type="text" class="form-control" id="project_link" name="project_link">
                             </div>
                             <div class="mb-3">
-                                <label for="link" class="form-label">Project Link</label>
-                                <input type="text" class="form-control" id="link" name="link">
+                                <label for="github_link" class="form-label">Github Link</label>
+                                <input type="text" class="form-control" id="github_link" name="github_link">
                             </div>
-
                             <div class="modal-footer justify-content-center">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-success">Add Project</button>
@@ -134,6 +134,12 @@
     </body>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- Routes --}}
+    <script>
+        // Add Project Route
+        const projectAddRoute = "{{ route('projects.add') }}";
+        const csrfToken = "{{ csrf_token() }}";
+    </script>
 </body>
 
 </html>
