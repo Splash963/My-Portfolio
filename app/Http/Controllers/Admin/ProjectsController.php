@@ -77,4 +77,19 @@ class ProjectsController extends Controller
             'project' => $project
         ]);
     }
+
+    public function delete($id)
+    {
+        $project = Project::findOrFail($id);
+
+        if ($project->image && file_exists(public_path('images/projects/' . $project->image))) {
+            unlink(public_path('images/projects/' . $project->image));
+        }
+
+        $project->delete();
+
+        return response()->json([
+            'message' => 'Project Deleted Successfully!'
+        ]);
+    }
 }
