@@ -152,6 +152,7 @@
         const projectAddRoute = "{{ route('projects.add') }}";
         const projectViewRoute = "{{ route('projects.view') }}";
         const projectUpdateRouteBase = "{{ url('admin/manage-projects/update') }}";
+        const projectDeleteRouteBase = "{{ url('admin/manage-projects/delete') }}";
         const projectImageBase = "{{ asset('images/projects') }}";
         const csrfToken = "{{ csrf_token() }}";
     </script>

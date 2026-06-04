@@ -73,7 +73,7 @@ function fetchProjects() {
                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                             </svg>
                         </button>
-                        <button class="btn btn-danger btn-sm" disabled title="Delete functionality not implemented on backend">
+                        <button class="btn btn-danger btn-sm delete-btn" type="button" title="Delete Project" data-id="${project.id}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
                                 <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
@@ -186,3 +186,36 @@ document.getElementById('updateProjectForm').addEventListener('submit', function
             alert('Failed to update project. Please try again.');
         });
 });
+
+//==========Delete Project==========
+document.addEventListener('click', function (e) {
+    const deleteBtn = e.target.closest('.delete-btn');
+    if (deleteBtn) {
+        const projectId = deleteBtn.getAttribute('data-id');
+        if (confirm("Are you sure you want to delete this project?")) {
+            fetch(projectDeleteRouteBase + '/' + projectId, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': csrfToken,
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    alert(data.message);
+                    fetchProjects();
+                })
+                .catch(error => {
+                    console.error('Error deleting project:', error);
+                    alert('Failed to delete project. Please try again.');
+                });
+        }
+    }
+});
+

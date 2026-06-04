@@ -24,3 +24,4 @@ Route::get('/admin/manage-projects', [ProjectsController::class, 'index'])->name
 Route::get('/admin/manage-projects/view', [ProjectsController::class, 'view_data'])->name('projects.view');
 Route::post('/admin/manage-projects/add', [ProjectsController::class, 'store'])->name('projects.add');
 Route::post('/admin/manage-projects/update/{id}', [ProjectsController::class, 'update'])->name('projects.update');
+Route::delete('/admin/manage-projects/delete/{id}', [ProjectsController::class, 'delete'])->name('projects.delete');
