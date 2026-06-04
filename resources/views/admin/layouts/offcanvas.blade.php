@@ -94,7 +94,7 @@
                                         </svg>
                                     </div>
                                     <div class="nav-link">
-                                        <a class="link {{ Request::is('projects') ? 'active' : '' }}"
+                                        <a class="link {{ Request::is('admin/manage-projects') ? 'active' : '' }}"
                                             href="{{ route('admin.projects') }}">Projects</a>
                                     </div>
                                 </li>

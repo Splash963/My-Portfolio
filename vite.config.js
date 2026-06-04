@@ -26,7 +26,7 @@ export default defineConfig({
                 'resources/css/layouts/reviews.css',
                 'resources/css/admin/dashboard.css',
                 'resources/css/admin/layouts/offcanvas.css',
-                'resources/css/admin/layouts/navbar.css',
+                'resources/css/admin/manage-projects.css',
             ],
             refresh: true,
         }),
