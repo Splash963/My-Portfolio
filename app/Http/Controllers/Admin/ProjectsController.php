@@ -38,6 +38,7 @@ class ProjectsController extends Controller
             'description' => $validated['description'],
             'project_link' => $request->project_link,
             'github_link' => $request->github_link,
+            'tools' => $request->tools,
         ]);
 
         return response()->json([
@@ -59,7 +60,7 @@ class ProjectsController extends Controller
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->getClientOriginalExtension();
             $request->image->move(public_path('images/projects'), $imageName);
-            
+
             if ($project->image && file_exists(public_path('images/projects/' . $project->image))) {
                 unlink(public_path('images/projects/' . $project->image));
             }
@@ -70,6 +71,7 @@ class ProjectsController extends Controller
         $project->description = $validated['description'];
         $project->project_link = $request->project_link;
         $project->github_link = $request->github_link;
+        $project->tools = $request->tools;
         $project->save();
 
         return response()->json([

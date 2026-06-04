@@ -55,6 +55,11 @@
                                 <label for="github_link" class="form-label">Github Link</label>
                                 <input type="text" class="form-control" id="github_link" name="github_link">
                             </div>
+                            <div class="mb-3">
+                                <label for="tools" class="form-label">Tools & Technologies (Comma Separated)</label>
+                                <input type="text" class="form-control" id="tools" name="tools"
+                                    placeholder="e.g. Laravel, React, TailwindCSS">
+                            </div>
                             <div class="modal-footer justify-content-center">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-success">Add Project</button>
@@ -102,6 +107,10 @@
                                 <input type="text" class="form-control" id="update_github_link"
                                     name="github_link">
                             </div>
+                            <div class="mb-3">
+                                <label for="update_tools" class="form-label">Tools & Technologies</label>
+                                <input type="text" class="form-control" id="update_tools" name="tools">
+                            </div>
                             <div class="modal-footer justify-content-center">
                                 <button type="button" class="btn btn-secondary"
                                     data-bs-dismiss="modal">Close</button>
@@ -129,6 +138,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Image</th>
                         <th scope="col">Project Description</th>
+                        <th scope="col">Tools</th>
                         <th scope="col">Project Link</th>
                         <th scope="col">Github Link</th>
                         <th scope="col">Created At</th>
