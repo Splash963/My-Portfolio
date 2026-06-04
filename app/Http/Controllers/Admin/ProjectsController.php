@@ -45,4 +45,36 @@ class ProjectsController extends Controller
             'project' => $project
         ]);
     }
+
+    public function update(Request $request, $id)
+    {
+        $project = Project::findOrFail($id);
+
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('images/projects'), $imageName);
+            
+            if ($project->image && file_exists(public_path('images/projects/' . $project->image))) {
+                unlink(public_path('images/projects/' . $project->image));
+            }
+            $project->image = $imageName;
+        }
+
+        $project->title = $validated['title'];
+        $project->description = $validated['description'];
+        $project->project_link = $request->project_link;
+        $project->github_link = $request->github_link;
+        $project->save();
+
+        return response()->json([
+            'message' => 'Project Updated Successfully!',
+            'project' => $project
+        ]);
+    }
 }

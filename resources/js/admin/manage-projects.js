@@ -61,7 +61,13 @@ function fetchProjects() {
                     <td>${createdAt}</td>
                     <td>${updatedAt}</td>
                     <td style="display: flex; justify-content: center; gap: 1rem;">
-                        <button class="btn btn-warning btn-sm" disabled title="Update functionality not implemented on backend">
+                        <button class="btn btn-warning btn-sm edit-btn" 
+                            data-id="${project.id}"
+                            data-title="${escapeHtml(project.title)}"
+                            data-description="${escapeHtml(project.description)}"
+                            data-project-link="${escapeHtml(project.project_link || '')}"
+                            data-github-link="${escapeHtml(project.github_link || '')}"
+                            title="Update Project">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
@@ -123,3 +129,60 @@ document.getElementById('addProjectForm').addEventListener('submit', function (e
 
 // Load projects on page load
 document.addEventListener('DOMContentLoaded', fetchProjects);
+
+// Handle Edit Button Click using event delegation
+document.addEventListener('click', function (e) {
+    const editBtn = e.target.closest('.edit-btn');
+    if (editBtn) {
+        document.getElementById('update_project_id').value = editBtn.getAttribute('data-id') || '';
+        document.getElementById('update_title').value = editBtn.getAttribute('data-title') || '';
+        document.getElementById('update_description').value = editBtn.getAttribute('data-description') || '';
+        document.getElementById('update_project_link').value = editBtn.getAttribute('data-project-link') || '';
+        document.getElementById('update_github_link').value = editBtn.getAttribute('data-github-link') || '';
+
+        const modalElement = document.getElementById('updateProjectModal');
+        const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
+        modalInstance.show();
+    }
+});
+
+//==========Update Project==========
+document.getElementById('updateProjectForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    let formData = new FormData(this);
+    const projectId = document.getElementById('update_project_id').value;
+
+    const modalElement = document.getElementById('updateProjectModal');
+    const modalInstance = bootstrap.Modal.getOrCreateInstance(modalElement);
+
+    fetch(projectUpdateRouteBase + '/' + projectId, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRF-TOKEN': csrfToken,
+            'Accept': 'application/json'
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            alert(data.message);
+            modalInstance.hide();
+
+            // Reset the form fields
+            document.getElementById('updateProjectForm').reset();
+
+            // Refresh table dynamically without page reload
+            fetchProjects();
+        })
+        .catch(error => {
+            console.error('Error updating project:', error);
+            alert('Failed to update project. Please try again.');
+        });
+});

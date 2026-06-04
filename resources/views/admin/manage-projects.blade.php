@@ -66,6 +66,54 @@
             </div>
         </div>
 
+        {{-- Update Modal --}}
+        <div class="modal fade" id="updateProjectModal" tabindex="-1" aria-labelledby="updateProjectModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="updateProjectModalLabel">Update Project</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="updateProjectForm">
+                            <input type="hidden" id="update_project_id" name="project_id">
+                            <div class="mb-3">
+                                <label for="update_title" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="update_title" name="title">
+                            </div>
+                            <div class="mb-3">
+                                <label for="update_image" class="form-label">Image (Leave blank to keep
+                                    current)</label>
+                                <input type="file" class="form-control" id="update_image" name="image">
+                            </div>
+                            <div class="mb-3">
+                                <label for="update_description" class="form-label">Project Description</label>
+                                <input type="text" class="form-control" id="update_description"
+                                    name="description">
+                            </div>
+                            <div class="mb-3">
+                                <label for="update_project_link" class="form-label">Project Link</label>
+                                <input type="text" class="form-control" id="update_project_link"
+                                    name="project_link">
+                            </div>
+                            <div class="mb-3">
+                                <label for="update_github_link" class="form-label">Github Link</label>
+                                <input type="text" class="form-control" id="update_github_link"
+                                    name="github_link">
+                            </div>
+                            <div class="modal-footer justify-content-center">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-warning">Update Project</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         {{-- Table --}}
         <div class="container mt-1">
             <div class="text-center py-4 px-3 rounded shadow-sm">
@@ -89,7 +137,7 @@
                     </tr>
                 </thead>
                 <tbody id="projects-table-body">
-                    <!-- Projects will be loaded dynamically here -->
+                    <!-- Projects Added dynamically here -->
                 </tbody>
             </table>
 
@@ -103,6 +151,7 @@
         // Project Routes and Asset Paths
         const projectAddRoute = "{{ route('projects.add') }}";
         const projectViewRoute = "{{ route('projects.view') }}";
+        const projectUpdateRouteBase = "{{ url('admin/manage-projects/update') }}";
         const projectImageBase = "{{ asset('images/projects') }}";
         const csrfToken = "{{ csrf_token() }}";
     </script>
