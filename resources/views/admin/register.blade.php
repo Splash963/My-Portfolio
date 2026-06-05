@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Portfolio Workspace</title>
+    <title>Register - Portfolio Workspace</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -73,7 +73,7 @@
             position: relative;
             z-index: 1;
             width: 100%;
-            max-width: 420px;
+            max-width: 480px;
             padding: 20px;
         }
 
@@ -156,24 +156,6 @@
             background: transparent;
         }
 
-        .form-check-input {
-            background-color: rgba(15, 23, 42, 0.6);
-            border-color: var(--border-color);
-            cursor: pointer;
-        }
-
-        .form-check-input:checked {
-            background-color: var(--primary);
-            border-color: var(--primary);
-        }
-
-        .form-check-label {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            cursor: pointer;
-            user-select: none;
-        }
-
         .btn-login {
             background: linear-gradient(135deg, var(--primary), var(--primary-hover));
             border: none;
@@ -204,25 +186,6 @@
             color: #fca5a5;
             border-radius: 12px;
             font-size: 0.9rem;
-        }
-
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 1.5rem;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .back-link:hover {
-            color: var(--text-main);
-        }
-
-        .back-link i {
-            margin-right: 0.5rem;
-            font-size: 0.8rem;
         }
 
         .auth-links {
@@ -257,10 +220,10 @@
     <div class="login-wrapper">
         <div class="login-card">
             <div class="brand-icon">
-                <i class="fa-solid fa-comments"></i>
+                <i class="fa-solid fa-user-plus"></i>
             </div>
-            <h1 class="login-title">Welcome Back</h1>
-            <p class="login-subtitle">Sign in to share your thoughts and reviews</p>
+            <h1 class="login-title">Create Account</h1>
+            <p class="login-subtitle">Register to share your thoughts and reviews</p>
 
             @if ($errors->any())
                 <div class="alert custom-alert p-3 mb-4">
@@ -272,12 +235,18 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('admin.login.submit') }}">
+            <form method="POST" action="{{ route('admin.register.submit') ?? url('/admin/register') }}">
                 @csrf
 
                 <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}"
+                        placeholder="John Doe" required autofocus>
+                    <label for="name"><i class="fa-regular fa-user me-2"></i>Full Name</label>
+                </div>
+
+                <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}"
-                        placeholder="name@example.com" required autofocus>
+                        placeholder="name@example.com" required>
                     <label for="email"><i class="fa-regular fa-envelope me-2"></i>Email address</label>
                 </div>
 
@@ -287,15 +256,15 @@
                     <label for="password"><i class="fa-solid fa-lock me-2"></i>Password</label>
                 </div>
 
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="remember" name="remember">
-                        <label class="form-check-label" for="remember">Remember me</label>
-                    </div>
+                <div class="form-floating mb-4">
+                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"
+                        placeholder="Confirm Password" required>
+                    <label for="password_confirmation"><i class="fa-solid fa-check-double me-2"></i>Confirm
+                        Password</label>
                 </div>
 
                 <button type="submit" class="btn btn-login">
-                    Sign In <i class="fa-solid fa-arrow-right ms-2"></i>
+                    Create Account <i class="fa-solid fa-arrow-right ms-2"></i>
                 </button>
             </form>
 
@@ -303,8 +272,8 @@
                 <a href="{{ url('/') }}" class="auth-link">
                     <i class="fa-solid fa-arrow-left"></i> Back to Website
                 </a>
-                <a href="{{ route('admin.register') ?? url('/admin/register') }}" class="auth-link">
-                    Don't have an account? Register <i class="fa-solid fa-arrow-right ms-1"></i>
+                <a href="{{ route('admin.login') ?? url('/admin/login') }}" class="auth-link">
+                    Already registered? Login <i class="fa-solid fa-arrow-right ms-1"></i>
                 </a>
             </div>
         </div>
