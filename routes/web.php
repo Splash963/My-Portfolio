@@ -25,3 +25,22 @@ Route::get('/admin/manage-projects/view', [ProjectsController::class, 'view_data
 Route::post('/admin/manage-projects/add', [ProjectsController::class, 'store'])->name('projects.add');
 Route::post('/admin/manage-projects/update/{id}', [ProjectsController::class, 'update'])->name('projects.update');
 Route::delete('/admin/manage-projects/delete/{id}', [ProjectsController::class, 'delete'])->name('projects.delete');
+
+// Auth Routes (Customer/User Login & Register)
+Route::get('/login', function () {
+    return view('admin.login');
+})->name('admin.login');
+
+Route::post('/login', function () {
+    // Placeholder for login logic
+    return back();
+})->name('admin.login.submit');
+
+Route::get('/register', function () {
+    return view('admin.register');
+})->name('admin.register');
+
+Route::post('/register', function () {
+    // Placeholder for register logic
+    return back();
+})->name('admin.register.submit');
