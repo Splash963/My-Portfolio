@@ -1,78 +1,64 @@
-.reviews-section {
-    background-color: transparent;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    padding: 60px 0;
+body {
+    background-color: #101a20;
 }
-
-.reviews-title {
-    font-size: 2.5em;
-    font-weight: bold;
-}
-
-.reviews-title .highlight {
-    color: #00bcd4;
-}
-
-.review-card {
-    background: rgba(255, 255, 255, 0.03); /* Subtle glass effect */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 30px 20px;
-    height: 100%;
+/* Contact Form Card */
+.contact-card {
+    background: #1e2b34;
+    border-radius: 15px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border: 1px solid rgba(0, 188, 212, 0.05);
 }
 
-.review-card:hover {
-    transform: translateY(-10px);
-    border-color: #00bcd4;
-    box-shadow: 0 10px 20px rgba(0, 188, 212, 0.15);
+.contact-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 188, 212, 0.1) !important;
+    border-color: rgba(0, 188, 212, 0.2);
 }
 
-.stars {
-    color: #FFD700;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-.review-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #cccccc;
-    font-style: italic;
-    min-height: 80px;
-    flex-grow: 1;
-}
-
-.reviewer-img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border: 2px solid #00bcd4;
-}
-
-.reviewer-name {
-    font-size: 1.1rem;
-    font-weight: bold;
+.contact-card h3 {
     color: white;
 }
 
-.reviewer-role {
-    font-size: 0.8rem;
+.form-control {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 15px;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: white !important;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 188, 212, 0.15);
+    border-color: #00bcd4;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Fix floating placeholder text color */
+.form-floating label {
+    color: #8c9dae;
+}
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
     color: #00bcd4;
 }
 
-@media screen and (max-width: 768px) {
-    .reviews-title {
-        font-size: 2em;
-    }
-    .review-card {
-        padding: 20px;
-    }
+.send-btn {
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: #00bcd4 !important;
+    border: 2px solid #00bcd4 !important;
+    color: #101a20 !important;
+}
+
+.send-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4) !important;
+    background-color: transparent !important;
+    color: #00bcd4 !important;
 }

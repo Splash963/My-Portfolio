@@ -22,7 +22,8 @@
             <h1 class="text-center mb-5 title">Get In Touch</h1>
 
             <p class="text-center lead mb-5 mx-auto" style="max-width: 800px;">
-                Have a project in mind or just want to say hi? I'd love to hear from you. Fill out the form below and I'll get back to you as soon as possible.
+                Have a project in mind or just want to say hi? I'd love to hear from you. Fill out the form below and
+                I'll get back to you as soon as possible.
             </p>
 
             <div class="row g-5 justify-content-center">
@@ -35,19 +36,22 @@
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                        <input type="text" class="form-control" id="name"
+                                            placeholder="Your Name" required>
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="Your Email" required>
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject" required>
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject"
+                                            required>
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
@@ -73,7 +77,8 @@
                     <div class="info-card p-4 p-md-5 shadow-sm h-100 bg-primary text-white">
                         <h3 class="mb-4 fw-bold text-white">Contact Info</h3>
                         <p class="mb-4 opacity-75">
-                            Whether you're looking to build a new website, improve your UI/UX, or need an app developed, feel free to reach out. I'm currently available for freelance work.
+                            Whether you're looking to build a new website, improve your UI/UX, or need an app developed,
+                            feel free to reach out. I'm currently available for freelance work.
                         </p>
 
                         <div class="d-flex align-items-center mb-4 info-item">
