@@ -272,7 +272,7 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('admin.login.submit') }}">
+            <form method="POST" action="{{ route('login') }}">
                 @csrf
 
                 <div class="form-floating mb-3">
@@ -300,10 +300,10 @@
             </form>
 
             <div class="auth-links">
-                <a href="{{ url('/') }}" class="auth-link">
+                <a href="{{ route('home') }}" class="auth-link">
                     <i class="fa-solid fa-arrow-left"></i> Back to Website
                 </a>
-                <a href="{{ route('admin.register') ?? url('/admin/register') }}" class="auth-link">
+                <a href="{{ route('register') ?? url('/register') }}" class="auth-link">
                     Don't have an account? Register <i class="fa-solid fa-arrow-right ms-1"></i>
                 </a>
             </div>
