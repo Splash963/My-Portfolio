@@ -46,8 +46,8 @@
                             <span class="user-name-text">Hi, {{ auth()->user()->name }}</span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}"
-                                href="{{ route('contact') }}">Leave a Review</a>
+                            <a class="nav-link {{ Request::is('review') ? 'active' : '' }}"
+                                href="{{ route('review') }}">Leave a Review</a>
                         </li>
                         <li class="nav-item">
                             <form action="{{ route('logout') }}" method="POST" class="d-inline m-0 p-0">

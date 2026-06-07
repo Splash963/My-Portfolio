@@ -30,6 +30,10 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+    Route::get('/review', function () {
+        return view('review');
+    })->name('review');
+
     Route::middleware('admin')->group(function () {
 
         Route::get('/admin', function () {
