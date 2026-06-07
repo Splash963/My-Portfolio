@@ -20,7 +20,7 @@
     </header>
 
     <main>
-        <div class="container text-center mb-5">
+        <div class="container text-center">
             <div class="row">
                 <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center column-01">
                     <div class="title">
@@ -65,12 +65,10 @@
             </div>
         </div>
 
-        </div>
-
         <!-- What People Say Section -->
         <section class="reviews-section py-5 px-3">
             <div class="container">
-                <h2 class="text-center mb-5 reviews-title" data-aos="fade-up">What People <span>Say</span></h2>
+                <h2 class="text-center reviews-title" data-aos="fade-up">What People <span>Say</span></h2>
                 <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner pb-5">
                         <!-- Review 1 -->
