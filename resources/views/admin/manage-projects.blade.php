@@ -126,7 +126,7 @@
         {{-- Table --}}
         <div class="container mt-1">
             <div class="text-center py-4 px-3 rounded shadow-sm">
-                <h2 class="mb-0 fw-bold display-5" style="letter-spacing: 1px; color: white">Customers</h2>
+                <h2 class="mb-0 fw-bold display-5" style="letter-spacing: 1px; color: white">Projects</h2>
             </div>
         </div>
 
