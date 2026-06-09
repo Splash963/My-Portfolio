@@ -40,9 +40,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/admin', function () {
             return view('admin.dashboard');
         })->name('admin.dashboard');
-        Route::get('/admin/manage-reviews', function () {
-            return view('admin.manage-reviews');
-        })->name('admin.reviews');
+        Route::get('/admin/manage-reviews', [ReviewController::class, 'index'])->name('admin.reviews');
+        Route::get('/reviews/{id}/view', [ReviewController::class, 'view_all_data'])->name('reviews.view_all_data');
 
         Route::get('/admin/manage-projects', [ProjectsController::class, 'index'])->name('admin.projects');
         Route::get('/admin/manage-projects/view', [ProjectsController::class, 'view_data'])->name('projects.view');

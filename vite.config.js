@@ -29,6 +29,7 @@ export default defineConfig({
                 'resources/css/admin/manage-projects.css',
                 'resources/js/admin/manage-projects.js',
                 'resources/js/manage-reviews.js',
+                'resources/css/admin/manage-reviews.css',
             ],
             refresh: true,
         }),

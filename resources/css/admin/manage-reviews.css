@@ -1,0 +1,128 @@
+.buttons {
+    display: flex;
+    gap: 2em;
+}
+
+.links {
+    list-style-type: none;
+}
+
+.btn-outline-primary {
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background-color: #1a3d64;
+    color: white;
+    border: 2px solid #1a3d64;
+}
+
+.btn-outline-primary.active {
+    background-color: #1a3d64 !important;
+    color: #fff;
+    border: 2px solid #1a3d64;
+}
+
+.cards {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    height: 15rem;
+    border-radius: 10px;
+    display: flex;
+}
+
+.cards:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal-dialog {
+    background-color: black;
+}
+
+.image {
+    width: 20%;
+    padding: 1rem;
+    margin: auto;
+    border-radius: 30px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    width: 10rem;
+    height: auto;
+    object-fit: cover;
+}
+
+.description {
+    width: 80%;
+    padding: 1rem;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .cards {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .image {
+        order: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .img {
+        width: 10rem;
+        height: auto;
+    }
+
+    .description {
+        order: 2;
+        text-align: start;
+        width: 100%;
+    }
+
+    .action {
+        order: 3;
+        display: flex;
+        justify-content: center;
+        padding-right: 0;
+        padding-bottom: 1rem;
+        width: 100%;
+    }
+
+    .btn-outline-primary {
+        font-size: 6px;
+        width: 100px;
+        height: 35px;
+    }
+
+    .buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+    }
+}
