@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('position')->nullable();
             $table->text('review');
             $table->integer('rating');
-            $table->boolean('is_approved')->default(false);
+            $table->enum('status', ['Pending', 'Approved', 'Canceled'])->default('Pending');
             $table->timestamps();
         });
     }

@@ -16,6 +16,6 @@ class Review extends Model
         'position',
         'review',
         'rating',
-        'is_approved',
+        'status',
     ];
 }
