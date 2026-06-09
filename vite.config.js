@@ -28,6 +28,7 @@ export default defineConfig({
                 'resources/css/admin/layouts/offcanvas.css',
                 'resources/css/admin/manage-projects.css',
                 'resources/js/admin/manage-projects.js',
+                'resources/js/manage-reviews.js',
             ],
             refresh: true,
         }),

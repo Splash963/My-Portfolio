@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\AuthController;
-use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\ReviewController;
 
 // Frontend Routes
 Route::get('/', [FrontendController::class, 'index'])->name('home');
@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/review', function () {
         return view('review');
     })->name('review');
+    Route::post('/submit-review', [ReviewController::class, 'store'])->name('review.submit');
 
     Route::middleware('admin')->group(function () {
 
