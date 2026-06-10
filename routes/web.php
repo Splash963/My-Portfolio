@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Admin\ProjectsController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReviewController;
 
@@ -24,6 +25,7 @@ Route::middleware('guest')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
 });
 
+Route::post('/submit-contact', [MessageController::class, 'store'])->name('contact.submit');
 
 
 Route::middleware('auth')->group(function () {

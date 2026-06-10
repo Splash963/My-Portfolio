@@ -34,6 +34,7 @@ export default defineConfig({
                 'resources/js/manage-reviews.js',
                 'resources/css/admin/manage-reviews.css',
                 'resources/js/admin-reviews.js',
+                'resources/js/contact.js',
             ],
             refresh: true,
         }),
