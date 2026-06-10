@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    @vite('resources/css/animations.css')
     @vite('resources/css/home.css')
     @vite('resources/js/home.js')
     @vite('resources/css/layouts/reviews.css')
@@ -21,7 +23,7 @@
     </header>
 
     <main>
-        <div class="container text-center">
+        <div class="container text-center" data-aos="fade-up">
             <div class="row">
                 <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-center column-01">
                     <div class="title">
@@ -69,7 +71,7 @@
         <!-- What People Say Section -->
         <section class="reviews-section py-5 px-3">
             <div class="container">
-                <h2 class="text-center reviews-title" data-aos="fade-up">What People <span>Say</span></h2>
+                <h2 class="text-center reviews-title" data-aos="fade-up" data-aos-delay="200">What People <span>Say</span></h2>
                 <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner pb-5">
                         <!-- Review 1 -->
@@ -133,6 +135,15 @@
         @include('layouts.footer')
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-cubic',
+            once: true,
+            offset: 100
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>

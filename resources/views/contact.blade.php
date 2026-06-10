@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    @vite('resources/css/animations.css')
     @vite('resources/css/contact.css')
     @vite('resources/js/contact.js')
 </head>
@@ -21,16 +23,16 @@
 
     <body>
         <div class="container mt-5 mb-5 pb-5">
-            <h1 class="text-center mb-5 title">Get In Touch</h1>
+            <h1 class="text-center mb-5 title" data-aos="fade-down">Get In Touch</h1>
 
-            <p class="text-center lead mb-5 mx-auto" style="max-width: 800px;">
+            <p class="text-center lead mb-5 mx-auto" data-aos="fade-up" style="max-width: 800px;">
                 Have a project in mind or just want to say hi? I'd love to hear from you. Fill out the form below and
                 I'll get back to you as soon as possible.
             </p>
 
             <div class="row g-5 justify-content-center">
                 <div class="col-lg-7">
-                    <div class="contact-card p-4 p-md-5 shadow-sm">
+                    <div class="contact-card p-4 p-md-5 shadow-sm" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="mb-4 fw-bold">Send a Message</h3>
                         <form id="messageForm" class="contact-form">
                             <div class="row g-3">
@@ -74,7 +76,7 @@
 
                 <!-- Contact Info -->
                 <div class="col-lg-5">
-                    <div class="info-card p-4 p-md-5 shadow-sm h-100 bg-primary text-white">
+                    <div class="info-card p-4 p-md-5 shadow-sm h-100 bg-primary text-white" data-aos="fade-up" data-aos-delay="200">
                         <h3 class="mb-4 fw-bold text-white">Contact Info</h3>
                         <p class="mb-4 opacity-75">
                             Whether you're looking to build a new website, improve your UI/UX, or need an app developed,
@@ -128,6 +130,15 @@
         @include('layouts.footer')
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-cubic',
+            once: true,
+            offset: 100
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const contactSubmitRoute = "{{ route('contact.submit') }}";
