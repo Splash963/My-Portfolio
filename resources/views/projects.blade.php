@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    @vite('resources/css/animations.css')
     @vite('resources/css/projects.css')
 </head>
 
@@ -19,9 +21,9 @@
 
     <body>
         <div class="container mt-5 mb-5 pb-5">
-            <h1 class="text-center mb-5 title">My Work</h1>
+            <h1 class="text-center mb-5 title" data-aos="fade-down">My Work</h1>
 
-            <p class="text-center lead mb-5 mx-auto" style="max-width: 800px;">
+            <p class="text-center lead mb-5 mx-auto" data-aos="fade-up" style="max-width: 800px;">
                 Here are a few design projects I've worked on recently. Want to see more? <a
                     href="{{ route('contact') }}"
                     class="text-accent text-decoration-none border-bottom border-accent">Email me</a>.
@@ -29,7 +31,7 @@
 
             <div class="row g-4">
                 @forelse($projects as $project)
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up">
                         <div class="card project-card border-0 h-100 bg-dark-card shadow transition-hover">
                             <div class="position-relative overflow-hidden project-img-wrapper">
                                 @if ($project->image)
@@ -89,7 +91,7 @@
                 @endforelse
             </div>
 
-            <div class="text-center mt-5 pt-4">
+            <div class="text-center mt-5 pt-4" data-aos="zoom-in" data-aos-delay="400">
                 <a href="https://github.com/Splash963" target="_blank"
                     class="btn btn-outline-accent btn-lg px-5 py-3 rounded-pill shadow fw-bold">
                     <i class="fa-brands fa-github me-2"></i> View More on GitHub
@@ -101,6 +103,15 @@
         @include('layouts.footer')
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-cubic',
+            once: true,
+            offset: 100
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
