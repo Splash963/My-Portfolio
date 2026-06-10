@@ -54,5 +54,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/admin/manage-projects/delete/{id}', [ProjectsController::class, 'delete'])->name('projects.delete');
 
         Route::get('/admin/manage-messages', [MessageController::class, 'index'])->name('admin.messages');
+        Route::post('/admin/messages/{id}/reply', [MessageController::class, 'reply'])->name('messages.reply');
+        Route::post('/admin/messages/{id}/pending', [MessageController::class, 'pending'])->name('messages.pending');
     });
 });
