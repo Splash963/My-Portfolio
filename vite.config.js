@@ -5,10 +5,13 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
     server: {
         host: '0.0.0.0',
-        cors: true,
         port: 5173,
+        strictPort: true,
         hmr: {
-            host: '192.168.1.104',
+            host: 'localhost',
+        },
+        watch: {
+            usePolling: true,
         },
     },
     plugins: [
@@ -30,9 +33,9 @@ export default defineConfig({
                 'resources/js/admin/manage-projects.js',
                 'resources/js/manage-reviews.js',
                 'resources/css/admin/manage-reviews.css',
+                'resources/js/admin-reviews.js',
             ],
             refresh: true,
         }),
     ],
 });
-``

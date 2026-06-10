@@ -42,6 +42,8 @@ Route::middleware('auth')->group(function () {
         })->name('admin.dashboard');
         Route::get('/admin/manage-reviews', [ReviewController::class, 'index'])->name('admin.reviews');
         Route::get('/reviews/{id}/view', [ReviewController::class, 'view_all_data'])->name('reviews.view_all_data');
+        Route::post('/admin/reviews/{id}/approve', [ReviewController::class, 'approve'])->name('reviews.approve');
+        Route::post('/admin/reviews/{id}/reject', [ReviewController::class, 'reject'])->name('reviews.reject');
 
         Route::get('/admin/manage-projects', [ProjectsController::class, 'index'])->name('admin.projects');
         Route::get('/admin/manage-projects/view', [ProjectsController::class, 'view_data'])->name('projects.view');

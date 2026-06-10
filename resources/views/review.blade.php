@@ -17,7 +17,6 @@
     @vite('resources/js/manage-reviews.js')
 
     <script>
-        // Route එක විතරක් head එකේම define කරනවා JS එකට කලින් හම්බවෙන්න
         const reviewSubmitRoute = "{{ route('review.submit') }}";
     </script>
 </head>

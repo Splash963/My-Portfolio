@@ -10,9 +10,12 @@ class ReviewController extends Controller
 {
     public function index()
     {
-        // $reviews = Review::where('is_approved', 1)->get();
         $reviews = Review::all();
-        return view('admin.manage-reviews', compact('reviews'));
+        $pending_reviews = Review::where('status', 'Pending')->get();
+        $confirmed_reviews = Review::where('status', 'Approved')->get();
+        $canceled_reviews = Review::where('status', 'Canceled')->get();
+
+        return view('admin.manage-reviews', compact('reviews', 'pending_reviews', 'confirmed_reviews', 'canceled_reviews'));
     }
 
     public function store(Request $request)
@@ -33,7 +36,6 @@ class ReviewController extends Controller
             'position' => $validated['position'],
             'review' => $validated['review'],
             'rating' => $validated['rating'],
-            'status' => "Pending",
         ]);
 
         return response()->json([
@@ -59,6 +61,32 @@ class ReviewController extends Controller
                 'created_at' => $view_review->created_at->format('Y-m-d H:i:s'),
                 'updated_at' => $view_review->updated_at->format('Y-m-d H:i:s')
             ]
+        ]);
+    }
+
+    public function approve($id)
+    {
+        $review = Review::findOrFail($id);
+        $review->status = 'Approved';
+        $review->save();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Review Approved successfully!',
+            'data' => $review
+        ]);
+    }
+
+    public function reject($id)
+    {
+        $review = Review::findOrFail($id);
+        $review->status = 'Canceled';
+        $review->save();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Review Rejected successfully!',
+            'data' => $review
         ]);
     }
 }
