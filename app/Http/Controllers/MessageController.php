@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
+    public function index()
+    {
+        $messages = Message::all();
+        $pendingMessages = Message::where('status', 'Pending')->get();
+        $repliedMessages = Message::where('status', 'Replied')->get();
+        return view('admin.manage-message', compact('messages', 'pendingMessages', 'repliedMessages'));
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -26,6 +34,28 @@ class MessageController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Message sent successfully!',
+        ]);
+    }
+
+    public function reply(Request $request, $id)
+    {
+        $message = Message::findOrFail($id);
+        $message->status = 'Replied';
+        $message->save();
+        return response()->json([
+            'success' => true,
+            'message' => 'Message replied successfully!',
+        ]);
+    }
+
+    public function pending(Request $request, $id)
+    {
+        $message = Message::findOrFail($id);
+        $message->status = 'Pending';
+        $message->save();
+        return response()->json([
+            'success' => true,
+            'message' => 'Message pending successfully!',
         ]);
     }
 }
