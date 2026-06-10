@@ -63,7 +63,7 @@
                     @forelse ($messages as $message)
                         <div class="cards mb-3">
                             <div class="image">
-                                <img src="{{ asset('profille/default.png') }}" class="img-fluid img"
+                                <img src="{{ asset('profille/message.png') }}" class="img-fluid img"
                                     alt="User Profile Image">
                             </div>
                             <div class="description">
@@ -110,7 +110,7 @@
                     @forelse ($pendingMessages as $message)
                         <div class="cards mb-3">
                             <div class="image">
-                                <img src="{{ asset('profille/default.png') }}" class="img-fluid img"
+                                <img src="{{ asset('profille/message.png') }}" class="img-fluid img"
                                     alt="User Profile Image">
                             </div>
                             <div class="description">
@@ -162,7 +162,7 @@
                     @forelse ($repliedMessages as $message)
                         <div class="cards mb-3">
                             <div class="image">
-                                <img src="{{ asset('profille/default.png') }}" class="img-fluid img"
+                                <img src="{{ asset('profille/message.png') }}" class="img-fluid img"
                                     alt="User Profile Image">
                             </div>
                             <div class="description">
@@ -218,7 +218,7 @@
                             <div class="row d-flex justify-content-center align-items-center">
                                 <div class="col-md-4 mb-3 d-flex justify-content-center">
                                     <div class="card shadow-sm" style="width: 10rem;">
-                                        <img src="{{ asset('profille/default.png') }}" id="review-profile"
+                                        <img src="{{ asset('profille/message.png') }}" id="review-profile"
                                             class="card-img-top" alt="Profile"
                                             style="background-color: #001F3D !important; border-radius: 20px !important">
                                     </div>
@@ -248,8 +248,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-danger delete-btn" id="delete-btn" data-id=""
-                            onclick="return confirm('Are you sure you want to delete ?');">
+                        <button type="button" class="btn btn-danger delete-btn"
+                            data-id="{{ isset($message->id) ? $message->id : '' }}">
                             Delete
                         </button>
                     </div>

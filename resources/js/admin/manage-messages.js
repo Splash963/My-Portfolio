@@ -4,12 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- Reply Buttons ---
     document.querySelectorAll('.reply-btn').forEach(button => {
         button.addEventListener('click', function () {
-            const reviewId = this.getAttribute('data-id');
+            const messageId = this.getAttribute('data-id');
 
-            if (!reviewId) return;
+            if (!messageId) return;
             if (!confirm('Are you sure you replyed to this message?')) return;
 
-            fetch(`/admin/messages/${reviewId}/reply`, {
+            fetch(`/admin/messages/${messageId}/reply`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- Pending Buttons ---
     document.querySelectorAll('.pending-btn').forEach(button => {
         button.addEventListener('click', function () {
-            const reviewId = this.getAttribute('data-id');
+            const messageId = this.getAttribute('data-id');
 
-            if (!reviewId) return;
+            if (!messageId) return;
             if (!confirm('Are you sure you want to Change Status of this message?')) return;
 
-            fetch(`/admin/messages/${reviewId}/pending`, {
+            fetch(`/admin/messages/${messageId}/pending`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -101,4 +101,37 @@ document.addEventListener('DOMContentLoaded', function () {
             if (deleteBtn) deleteBtn.setAttribute('data-id', id);
         });
     });
+});
+
+
+//Delete Data in Modal
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteBtn = document.getElementById('delete-btn');
+
+    if (deleteBtn) {
+        deleteBtn.addEventListener('click', function () {
+            const messageId = this.getAttribute('data-id');
+            if (!messageId) return;
+
+            if (!confirm('Are you sure you want to delete this message ?')) return;
+
+            fetch(`/admin/messages/${messageId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        location.reload();
+                    } else {
+                        alert('Failed to delete message!');
+                    }
+                })
+                .catch(err => console.error(err));
+        });
+    }
 });

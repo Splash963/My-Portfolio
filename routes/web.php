@@ -57,5 +57,6 @@ Route::middleware('auth')->group(function () {
         Route::get('/messages/{id}/view', [MessageController::class, 'view_all_data'])->name('messages.view_all_data');
         Route::post('/admin/messages/{id}/reply', [MessageController::class, 'reply'])->name('messages.reply');
         Route::post('/admin/messages/{id}/pending', [MessageController::class, 'pending'])->name('messages.pending');
+        Route::delete('/admin/messages/{id}', [MessageController::class, 'destroy'])->name('messages.delete');
     });
 });

@@ -67,4 +67,14 @@ class MessageController extends Controller
             'message' => 'Message pending successfully!',
         ]);
     }
+
+    public function destroy($id)
+    {
+        $message = Message::findOrFail($id);
+        $message->delete();
+        return response()->json([
+            'success' => true,
+            'message' => 'Message deleted successfully!',
+        ]);
+    }
 }
