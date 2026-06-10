@@ -107,7 +107,7 @@
                                         </svg>
                                     </div>
                                     <div class="nav-link">
-                                        <a class="link {{ Request::is('reviews') ? 'active' : '' }}"
+                                        <a class="link {{ Request::is('admin/manage-reviews') ? 'active' : '' }}"
                                             href="{{ route('admin.reviews') }}">Reviews</a>
                                     </div>
                                 </li>

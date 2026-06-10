@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     @vite('resources/css/home.css')
     @vite('resources/js/home.js')
@@ -72,49 +73,44 @@
                 <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner pb-5">
                         <!-- Review 1 -->
-                        <div class="carousel-item active">
-                            <div class="row justify-content-center">
-                                <div class="col-11 col-md-8 text-center">
-                                    <div class="review-card">
-                                        <p class="review-text fst-italic mb-4">"Theekshana transformed our vision into a
-                                            stunning reality. His attention to detail and UI/UX design sense is truly
-                                            unparalleled. Highly recommended for any web project!"</p>
-                                        <h5 class="review-author mb-1">John Doe</h5>
-                                        <p class="review-role mb-0">CEO, TechNova Solutions</p>
+                        @forelse ($review as $item)
+                            <div class="carousel-item active">
+                                <div class="row justify-content-center">
+                                    <div class="col-11 col-md-8 text-center">
+                                        <div class="review-card">
+                                            <p class="review-text fst-italic mb-4">"{{ $item->review }}"</p>
+                                            <h5 class="review-author mb-1">{{ $item->user_name }}</h5>
+                                            <p class="review-role mb-0">{{ $item->company_name }}</p>
+                                            <p class="review-role mb-0">{{ $item->position }}</p>
+                                            <span class="appointment-rating-stars"
+                                                style="color: #ffc107; font-size: 1.1rem;">
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    @if ($i <= $item->rating)
+                                                        <i class="fa-solid fa-star me-1"></i>
+                                                    @else
+                                                        <i class="fa-regular fa-star me-1"></i>
+                                                    @endif
+                                                @endfor
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Review 2 -->
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-11 col-md-8 text-center">
-                                    <div class="review-card">
-                                        <p class="review-text fst-italic mb-4">"An absolute pleasure to work with. He
-                                            delivered
-                                            a flawless web application ahead of schedule. The mobile responsiveness is
-                                            perfect and the code is remarkably clean."</p>
-                                        <h5 class="review-author mb-1">Sarah Jenkins</h5>
-                                        <p class="review-role mb-0">Marketing Director, CreativeMinds</p>
+                        @empty
+                            <div class="carousel-item active">
+                                <div class="row justify-content-center">
+                                    <div class="col-11 col-md-8 text-center">
+                                        <div class="review-card">
+                                            <p class="review-text fst-italic mb-4">"No reviews yet"</p>
+                                            <h5 class="review-author mb-1"></h5>
+                                            <p class="review-role mb-0"></p>
+                                            <p class="review-role mb-0"></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- Review 3 -->
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-11 col-md-8 text-center">
-                                    <div class="review-card">
-                                        <p class="review-text fst-italic mb-4">"The expertise Theekshana brings to the
-                                            table
-                                            significantly improved our user engagement. He bridges the gap between
-                                            design and functionality seamlessly."</p>
-                                        <h5 class="review-author mb-1">Michael Chen</h5>
-                                        <p class="review-role mb-0">Product Manager, InnovateApp</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforelse
+
                     </div>
                     <!-- Carousel Controls -->
                     <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel"

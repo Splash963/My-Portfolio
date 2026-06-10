@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Review;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $review = Review::where('status', 'Approved')->orderBy('created_at', 'desc')->get();
+        return view('home', compact('review'));
     }
 
     public function about()
