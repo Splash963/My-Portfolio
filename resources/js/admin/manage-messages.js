@@ -57,3 +57,48 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
+//View Data in Modal
+document.addEventListener('DOMContentLoaded', function () {
+    const viewButtons = document.querySelectorAll('.view-btn');
+
+    viewButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const id = this.getAttribute('data-id');
+            const userName = this.getAttribute('data-user-name') || 'Guest';
+            const email = this.getAttribute('data-email') || 'N/A';
+            const subject = this.getAttribute('data-subject') || 'N/A';
+            const message = this.getAttribute('data-message') || 'N/A';
+            const status = this.getAttribute('data-status') || 'Pending';
+            const createdAt = this.getAttribute('data-created-at') || 'N/A';
+            const updatedAt = this.getAttribute('data-updated-at') || 'N/A';
+
+
+            if (document.getElementById('id')) document.getElementById('id').textContent = id;
+            if (document.getElementById('user-name')) document.getElementById('user-name').textContent = userName;
+            if (document.getElementById('email')) document.getElementById('email').textContent = email;
+            if (document.getElementById('subject')) document.getElementById('subject').textContent = subject;
+            if (document.getElementById('message')) document.getElementById('message').textContent = message;
+            if (document.getElementById('created_at')) document.getElementById('created_at').textContent = createdAt;
+            if (document.getElementById('updated_at')) document.getElementById('updated_at').textContent = updatedAt;
+
+
+            const statusSpan = document.getElementById('status');
+            if (statusSpan) {
+                statusSpan.textContent = status;
+                statusSpan.className = 'badge';
+
+                if (status === 'Replied') {
+                    statusSpan.classList.add('bg-success');
+                } else if (status === 'Pending') {
+                    statusSpan.classList.add('bg-warning', 'text-dark');
+                }
+            }
+
+            const deleteBtn = document.getElementById('delete-btn');
+            if (deleteBtn) deleteBtn.setAttribute('data-id', id);
+        });
+    });
+});

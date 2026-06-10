@@ -37,6 +37,15 @@ class MessageController extends Controller
         ]);
     }
 
+    public function view_all_data($id)
+    {
+        $message = Message::find($id);
+        if (!$message) {
+            return response()->json(['success' => false, 'message' => 'Message not found.'], 404);
+        }
+        return response()->json($message);
+    }
+
     public function reply(Request $request, $id)
     {
         $message = Message::findOrFail($id);
