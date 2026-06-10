@@ -9,6 +9,8 @@
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <!-- FontAwesome for standard icons if needed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    @vite('resources/css/animations.css')
     @vite('resources/css/services.css')
 </head>
 
@@ -20,9 +22,9 @@
 
     <body>
         <div class="container mt-5 mb-5 pb-5">
-            <h1 class="text-center mb-5 title">My Services</h1>
+            <h1 class="text-center mb-5 title" data-aos="fade-down">My Services</h1>
 
-            <p class="text-center lead mb-5 mx-auto" style="max-width: 800px;">
+            <p class="text-center lead mb-5 mx-auto" data-aos="fade-up" style="max-width: 800px;">
                 I offer a diverse range of design and development services tailored to help your business achieve its
                 digital goals. By blending deep technical expertise with user-centered design, I craft solutions that
                 are both beautiful and performant.
@@ -30,7 +32,7 @@
 
             <div class="row g-4">
                 <!-- UI/UX Design -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <div class="card service-card h-100 border-0 shadow-sm text-center p-4">
                         <div class="icon-wrapper mb-3 mx-auto">
                             <i class="fa-solid fa-pen-nib fs-2 text-primary"></i>
@@ -44,7 +46,7 @@
                 </div>
 
                 <!-- Web Development -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <div class="card service-card h-100 border-0 shadow-sm text-center p-4">
                         <div class="icon-wrapper mb-3 mx-auto">
                             <i class="fa-solid fa-code fs-2 text-primary"></i>
@@ -58,7 +60,7 @@
                 </div>
 
                 <!-- Mobile App Development -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <div class="card service-card h-100 border-0 shadow-sm text-center p-4">
                         <div class="icon-wrapper mb-3 mx-auto">
                             <i class="fa-solid fa-mobile-screen-button fs-2 text-primary"></i>
@@ -72,7 +74,7 @@
                 </div>
 
                 <!-- WordPress Development -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <div class="card service-card h-100 border-0 shadow-sm text-center p-4">
                         <div class="icon-wrapper mb-3 mx-auto">
                             <i class="fa-brands fa-wordpress fs-2 text-primary"></i>
@@ -86,7 +88,7 @@
                 </div>
 
                 <!-- Graphic Design -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <div class="card service-card h-100 border-0 shadow-sm text-center p-4">
                         <div class="icon-wrapper mb-3 mx-auto">
                             <i class="fa-solid fa-palette fs-2 text-primary"></i>
@@ -100,7 +102,7 @@
                 </div>
 
                 <!-- E-Commerce Solutions -->
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <div class="card service-card h-100 border-0 shadow-sm text-center p-4">
                         <div class="icon-wrapper mb-3 mx-auto">
                             <i class="fa-solid fa-cart-shopping fs-2 text-primary"></i>
@@ -114,7 +116,7 @@
                 </div>
             </div>
 
-            <div class="text-center mt-5 pt-4">
+            <div class="text-center mt-5 pt-4" data-aos="zoom-in" data-aos-delay="400">
                 <a href="{{ route('contact') }}" class="btn btn-primary btn-lg custom-btn shadow">Discuss Your
                     Project</a>
             </div>
@@ -125,6 +127,15 @@
         @include('layouts.footer')
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-cubic',
+            once: true,
+            offset: 100
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

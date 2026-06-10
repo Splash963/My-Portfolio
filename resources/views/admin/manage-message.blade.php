@@ -63,7 +63,7 @@
                     @forelse ($messages as $message)
                         <div class="cards mb-3">
                             <div class="image">
-                                <img src="{{ asset('profille/default.png') }}" class="img-fluid img"
+                                <img src="{{ asset('profille/message.png') }}" class="img-fluid img"
                                     alt="User Profile Image">
                             </div>
                             <div class="description">
@@ -82,7 +82,7 @@
                             </div>
                             <div class="action">
                                 <button class="btn btn btn-info view-btn" data-bs-toggle="modal"
-                                    data-bs-target="#reviewModal" data-id="{{ $message->id }}"
+                                    data-bs-target="#messageModal" data-id="{{ $message->id }}"
                                     data-user-name="{{ $message->user_name }}" data-email="{{ $message->email }}"
                                     data-subject="{{ $message->subject }}" data-message="{{ $message->message }}"
                                     data-status="{{ $message->status }}"
@@ -110,7 +110,7 @@
                     @forelse ($pendingMessages as $message)
                         <div class="cards mb-3">
                             <div class="image">
-                                <img src="{{ asset('profille/default.png') }}" class="img-fluid img"
+                                <img src="{{ asset('profille/message.png') }}" class="img-fluid img"
                                     alt="User Profile Image">
                             </div>
                             <div class="description">
@@ -129,7 +129,7 @@
                             </div>
                             <div class="action">
                                 <button class="btn btn btn-info view-btn" data-bs-toggle="modal"
-                                    data-bs-target="#reviewModal" data-id="{{ $message->id }}"
+                                    data-bs-target="#messageModal" data-id="{{ $message->id }}"
                                     data-user-name="{{ $message->user_name }}" data-email="{{ $message->email }}"
                                     data-subject="{{ $message->subject }}" data-message="{{ $message->message }}"
                                     data-status="{{ $message->status }}"
@@ -162,7 +162,7 @@
                     @forelse ($repliedMessages as $message)
                         <div class="cards mb-3">
                             <div class="image">
-                                <img src="{{ asset('profille/default.png') }}" class="img-fluid img"
+                                <img src="{{ asset('profille/message.png') }}" class="img-fluid img"
                                     alt="User Profile Image">
                             </div>
                             <div class="description">
@@ -181,7 +181,7 @@
                             </div>
                             <div class="action">
                                 <button class="btn btn btn-info view-btn" data-bs-toggle="modal"
-                                    data-bs-target="#reviewModal" data-id="{{ $message->id }}"
+                                    data-bs-target="#messageModal" data-id="{{ $message->id }}"
                                     data-user-name="{{ $message->user_name }}" data-email="{{ $message->email }}"
                                     data-subject="{{ $message->subject }}" data-message="{{ $message->message }}"
                                     data-status="{{ $message->status }}"
@@ -198,6 +198,61 @@
                     @empty
                         <h1 class="text-center mt-5 text-white">There are NO Messages Here</h1>
                     @endforelse
+                </div>
+            </div>
+        </div>
+
+
+        <!-- View All Data Modal -->
+        <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="messageModalLabel">Message Details</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row d-flex justify-content-center align-items-center">
+                                <div class="col-md-4 mb-3 d-flex justify-content-center">
+                                    <div class="card shadow-sm" style="width: 10rem;">
+                                        <img src="{{ asset('profille/message.png') }}" id="review-profile"
+                                            class="card-img-top" alt="Profile"
+                                            style="background-color: #001F3D !important; border-radius: 20px !important">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p style="text-align: left;" class="fw-bold">ID : <span id="id"
+                                                class="fw-normal"></span></p>
+                                        <p style="text-align: left;" class="fw-bold">User Name : <span id="user-name"
+                                                class="fw-normal"></span></p>
+                                        <p style="text-align: left;" class="fw-bold">Email : <span id="email"
+                                                class="fw-normal"></span></p>
+                                        <p style="text-align: left;" class="fw-bold">Subject : <span id="subject"
+                                                class="fw-normal"></span></p>
+                                        <p style="text-align: left;" class="fw-bold">Message : <span id="message"
+                                                class="fw-normal"></span></p>
+                                        <p style="text-align: left;" class="fw-bold">Status : <span id="status"
+                                                class="badge"></span></p>
+                                        <p style="text-align: left;" class="fw-bold">Created Date : <span
+                                                id="created_at" class="fw-normal"></span></p>
+                                        <p style="text-align: left;" class="fw-bold">Updated Date : <span
+                                                id="updated_at" class="fw-normal"></span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger delete-btn"
+                            data-id="{{ isset($message->id) ? $message->id : '' }}">
+                            Delete
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

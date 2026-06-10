@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    @vite('resources/css/animations.css')
     @vite('resources/css/layouts/reviews.css')
     @vite('resources/js/manage-reviews.js')
 
@@ -27,8 +29,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-center align-items-center" style="height: 90vh;">
-                <div class="col-lg-6">
-                    <div class="contact-card p-4 p-md-5 shadow-sm">
+                <div class="col-lg-6" data-aos="zoom-in">
+                    <div class="contact-card p-4 p-md-5 shadow-sm" data-aos="fade-up">
                         <h3 class="mb-4 fw-bold">Send a Review</h3>
                         <form id="reviewForm" class="contact-form">
                             @csrf
@@ -85,6 +87,15 @@
 
     @include('layouts.footer')
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-cubic',
+            once: true,
+            offset: 100
+        });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
