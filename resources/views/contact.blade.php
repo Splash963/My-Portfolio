@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Contact</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     @vite('resources/css/contact.css')
+    @vite('resources/js/contact.js')
 </head>
 
 <body>
@@ -27,12 +29,10 @@
             </p>
 
             <div class="row g-5 justify-content-center">
-                <!-- Contact Form -->
                 <div class="col-lg-7">
                     <div class="contact-card p-4 p-md-5 shadow-sm">
                         <h3 class="mb-4 fw-bold">Send a Message</h3>
-                        <form action="#" method="POST" class="contact-form">
-                            <!-- Note: CSRF token omitted since backend for this form is likely not requested yet, but keeping structure standard -->
+                        <form id="messageForm" class="contact-form">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating mb-3">
@@ -129,6 +129,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const contactSubmitRoute = "{{ route('contact.submit') }}";
+    </script>
 </body>
 
 </html>
